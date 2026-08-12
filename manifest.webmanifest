@@ -1,0 +1,13 @@
+{
+  "name": "HARRY — Hybrid Adaptive Reasoning & Response sYstem",
+  "short_name": "HARRY",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#050805",
+  "theme_color": "#050805",
+  "icons": [
+    { "src": "icons/amazwi-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/amazwi-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
