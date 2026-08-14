@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HARRY — Hybrid Adaptive Reasoning &amp; Response sYstem</title>
 <meta name="theme-color" content="#050805">
 <meta name="mobile-web-app-capable" content="yes">
@@ -361,82 +361,6 @@ footer .fs.b{margin-top:26px;color:var(--muted)}
 .srcs a:hover{border-color:var(--stroke-brt);color:var(--lime)}
 .vtag{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:.24em;color:#0B1404;background:var(--lime);border-radius:100px;padding:4px 12px;margin-left:14px;vertical-align:middle;box-shadow:0 0 18px rgba(185,255,60,.45)}
 
-/* ---------- responsive · fit every screen (v1.2) ---------- */
-html{-webkit-text-size-adjust:100%}
-img,svg,canvas{max-width:100%}
-.eyebrow,.h-eyebrow{flex-wrap:wrap}
-
-/* grid/flex children default to min-width:auto, so the pre-formatted
-   .cmd / .pt-flow scrollers size their track to full unwrapped text and
-   blow the page out sideways. Let the tracks shrink; the code blocks
-   keep their own internal scrollbar. */
-.ph-grid>*,.irow,.irow>*,.pattern>*,.lib>*,.lrow>*,.insight>*,
-.agents>*,.steps>*,.blk,.pt-body,.in-body,.ph-card,.ph-top{min-width:0}
-.cmd,.pt-flow{max-width:100%}
-
-/* anchor targets must clear the fixed nav instead of landing under it */
-section,.phase{scroll-margin-top:96px}
-
-/* notch + home-indicator safe areas (standalone PWA, viewport-fit=cover) */
-nav{padding-top:calc(18px + env(safe-area-inset-top));
-  padding-left:calc(28px + env(safe-area-inset-left));
-  padding-right:calc(28px + env(safe-area-inset-right))}
-.wrap,.ps-inner{padding-left:calc(28px + env(safe-area-inset-left));
-  padding-right:calc(28px + env(safe-area-inset-right))}
-footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
-
-@media(max-width:900px){section{padding:110px 0 26px}}
-
-@media(max-width:700px){
-  .wrap,.ps-inner{padding-left:calc(22px + env(safe-area-inset-left));
-    padding-right:calc(22px + env(safe-area-inset-right))}
-  nav{padding:calc(14px + env(safe-area-inset-top)) calc(22px + env(safe-area-inset-right)) 14px calc(22px + env(safe-area-inset-left))}
-  .hero{padding:110px 0 60px}
-  section,.phase{scroll-margin-top:78px}
-  .timeline{padding-top:56px}
-  .phase{padding:0 0 22px 52px}
-  .ph-card{padding:26px 24px}
-  .callout{padding:26px 24px;margin-top:38px}
-}
-
-@media(max-width:480px){
-  section{padding:88px 0 22px}
-  .wrap,.ps-inner{padding-left:calc(16px + env(safe-area-inset-left));
-    padding-right:calc(16px + env(safe-area-inset-right))}
-  nav{padding:calc(12px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) 12px calc(16px + env(safe-area-inset-left))}
-  .nv-brand{font-size:12.5px;letter-spacing:.2em}
-  .nv-right{gap:10px;font-size:10px;letter-spacing:.1em}
-  .nv-ring{width:28px;height:28px}
-  .lede{font-size:16px;margin-bottom:44px}
-  .timeline{padding-top:44px}
-  .phase{padding:0 0 20px 42px}
-  .ph-card{padding:22px 18px}
-  .ph-top{gap:12px}
-  .ph-toggle{width:34px;height:34px;font-size:16px}
-  .ph-ghost{font-size:clamp(56px,17vw,86px)}
-  .mnode{white-space:normal;text-align:center;font-size:11px;padding:10px 15px}
-  .mnode.core{font-size:12px;padding:13px 20px}
-  .agents,.steps{grid-template-columns:1fr}
-  .me-note,.dayone{padding:26px 20px}
-  .callout{padding:22px 18px}
-  .lib{padding:24px 2px}
-  .lib:hover{padding-left:8px}
-  footer{padding:70px 0 calc(80px + env(safe-area-inset-bottom))}
-}
-
-@media(max-width:360px){
-  #navCount{display:none}
-  .hero-meta{gap:8px 18px}
-}
-
-/* phones held sideways */
-@media(max-height:540px) and (orientation:landscape){
-  .hero{min-height:0;padding:104px 0 48px}
-  .amazwi{height:clamp(96px,20vh,150px)}
-  .amazwi-zone{min-height:0}
-  section{padding:84px 0 20px}
-}
-
 </style>
 </head>
 <body>
@@ -462,7 +386,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero-left">
-    <div class="h-eyebrow">AMAZWI — PERSONAL AI OPERATING LAYER<span class="vtag">ROADMAP v1.2</span></div>
+    <div class="h-eyebrow">AMAZWI — PERSONAL AI OPERATING LAYER<span class="vtag">ROADMAP v1.3</span></div>
     <h1>HARRY</h1>
     <div class="h-acr"><b>H</b>ybrid <b>A</b>daptive <b>R</b>easoning &amp; <b>R</b>esponse s<b>Y</b>stem</div>
     <p class="hero-tag">Not a chatbot. A <em>control plane</em> above Windows that commands local models, Claude, OpenAI, your files, your code and your voice — reversible, auditable, and entirely yours.</p>
@@ -476,6 +400,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
     <div class="hero-links">
       <a class="hlink" href="#phases">Mission timeline</a>
       <a class="hlink" href="#council">Subscription bridges</a>
+      <a class="hlink" href="#human">Identity &amp; authority</a>
       <a class="hlink" href="#compiler">Experience compiler</a>
     </div>
   </div>
@@ -501,7 +426,20 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
   <div class="pbar deep" data-speed="0.25" style="width:170px;height:64vh;top:30%;left:-90px"></div>
   <div class="eyebrow"><span class="n">01</span> ANALYSIS</div>
   <h2>What you're actually building <span class="dim">— the read.</span></h2>
-  <p class="lede">All 3,253 lines of v1.2 reviewed — and this pass, <b>every model tag, installer and CLI flag was verified against live sources.</b> The architecture is sound and achievable on 16 GB today. Six decisions carry the whole project — protect them.</p>
+  <p class="lede">All 3,683 lines of v1.3 reviewed — every model tag, installer and CLI flag verified against live sources, and the new human layer read line by line. The architecture is sound and achievable on 16 GB today. Seven decisions carry the whole project — protect them.</p>
+
+  <div class="callout" style="margin-top:0;margin-bottom:44px">
+    <div class="k">The North Star — new in v1.3</div>
+    <p style="font-family:var(--display);font-weight:500;font-size:clamp(16px,2.2vw,21px);color:var(--ink);line-height:1.5;max-width:none">"Harry is a trusted personal AI teammate who grows more useful with the user while remaining transparent, permissioned, private by default, and under the user's control."</p>
+    <p style="margin-top:14px">Every architectural decision gets tested against five questions — and if a feature fails one, it waits:</p>
+  </div>
+  <div class="steps" style="margin-bottom:70px">
+    <div class="step"><b>1</b>More useful in daily life?</div>
+    <div class="step"><b>2</b>User clearly in control?</div>
+    <div class="step"><b>3</b>Can Harry explain what &amp; why?</div>
+    <div class="step"><b>4</b>Reversible / auditable?</div>
+    <div class="step"><b>5</b>Less cloud dependence over time?</div>
+  </div>
 
   <div class="insight">
     <div class="in-num">01</div>
@@ -542,7 +480,14 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
     <div class="in-num">06</div>
     <div class="in-body">
       <h3>Phase gates kill demo-driven development</h3>
-      <p>"The demo worked once" never advances a phase. Each has measurable exit criteria — 95% wake reliability, proven Git rollback, injection tests passing. <b>This is what makes Harry reliable instead of a weekend toy.</b></p>
+      <p>"The demo worked once" never advances a phase. Each has measurable exit criteria — proven Git rollback, injection tests passing, restore drills that actually run. <b>This is what makes Harry reliable instead of a weekend toy.</b></p>
+    </div>
+  </div>
+  <div class="insight">
+    <div class="in-num">07</div>
+    <div class="in-body">
+      <h3>The human layer: identity, consent, and scoped authority</h3>
+      <p>v1.3's contribution. Harry opens with a <b>first-run conversation</b>, keeps personality as editable config, and <b>asks before remembering</b>. On the power side, approvals can become scoped grants — but an always-confirm list (money, credentials, deploys) never auto-approves, elevation is temporary, and one stop command halts everything. A personality with a permission slip.</p>
     </div>
   </div>
 </section>
@@ -580,7 +525,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
 <section id="phases" style="padding-bottom:0">
   <div class="eyebrow"><span class="n">03</span> MISSION TIMELINE</div>
   <h2>Sixteen phases. <span class="dim">Each ships something you can use.</span></h2>
-  <p class="lede" style="margin-bottom:0">Tap a phase to open its briefing — now with <b>every install, exact link and command</b> inside. Tap a command to copy it. Mark a phase complete when its gate passes — <b>progress saves on this device.</b> New in v1.2: Career Intelligence, Product Studio and the Experience Compiler.</p>
+  <p class="lede" style="margin-bottom:0">Tap a phase to open its briefing — now with <b>every install, exact link and command</b> inside. Tap a command to copy it. Mark a phase complete when its gate passes — <b>progress saves on this device.</b> New in v1.3: first-run onboarding, the personality engine and the Windows Authority Model — on top of v1.2’s Career Intelligence, Product Studio and Experience Compiler.</p>
 </section>
 </div>
 
@@ -792,10 +737,54 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
   </div>
 </section>
 
+<!-- ============ IDENTITY & AUTHORITY ============ -->
+<section id="human">
+  <div class="pbar" data-speed="0.55" style="width:105px;height:50vh;top:6%;left:-40px"></div>
+  <div class="pbar deep" data-speed="0.28" style="width:185px;height:64vh;top:34%;right:-100px"></div>
+  <div class="eyebrow"><span class="n">07</span> IDENTITY &amp; AUTHORITY</div>
+  <h2>Personal from "Yo Harry." <span class="dim">Powerful on a leash.</span></h2>
+  <p class="lede">v1.3's whole theme is the human layer. Harry opens with a <b>real first-run conversation</b>, keeps personality as editable config, asks before remembering anything — and holds Windows power through <b>scoped, revocable grants</b> with one universal stop.</p>
+
+  <div class="pt-flow" style="margin-bottom:44px">"Yo Harry" → wake (local) → "Hey. I'm Harry. Before we start properly, I'd like to learn how you want us to work together." → guided conversation → profile saved locally → you confirm the summary</div>
+
+  <div class="agents">
+    <div class="agent ag-harry">
+      <div class="role">config/profile.yaml</div><h3>Identity Profile</h3>
+      <ul><li>Name, locale, timezone — Uzi · en-ZA</li><li>Verbosity, directness, humor, challenge level</li><li>Edited by voice: "call me Uzi from now on"</li><li>Auditable and reversible, never buried in prompts</li></ul>
+    </div>
+    <div class="agent ag-claude">
+      <div class="role">config/personality.yaml</div><h3>Personality Engine</h3>
+      <ul><li>Dials, not hard-code: warmth, humor, directness, challenge</li><li>Mode overlays — same Harry, different lens per mode</li><li>"Be more critical when we review architecture"</li><li>Survives any model swap — it lives in Harry, not the LLM</li></ul>
+    </div>
+    <div class="agent ag-local">
+      <div class="role">config/voice.yaml</div><h3>Voice Profiles</h3>
+      <ul><li>Kokoro voice_id swappable independent of the model</li><li>Audition local voices, pick one, it persists</li><li>Varied wake replies: "Yeah?" · "What's up?"</li><li>Calm, dry, original — no cloned actors, ever</li></ul>
+    </div>
+    <div class="agent ag-openai">
+      <div class="role">enforced in code · Phase 3</div><h3>Memory Consent</h3>
+      <ul><li>Conversation-only vs long-term vs never-store</li><li>"Do you want me to remember that?"</li><li>Inspect and delete anything saved</li><li>Consent rules live in the memory policy engine, not prompts</li></ul>
+    </div>
+  </div>
+
+  <div class="pattern">
+    <div class="pt-key"><span class="pn">⛨</span>PERMISSION MEMORY</div>
+    <div class="pt-body">
+      <h3>Approvals that learn — inside hard limits</h3>
+      <div class="pt-flow">request → capability → risk: low runs · medium asks once · high always asks · admin = temporary elevation, then the process exits</div>
+      <p>"You may always open VS Code and create folders in Personal Projects" becomes a <b>scoped grant</b> — capability + scope + automatic — in grants.yaml. Scoped, never blanket; revoked in one line. Harry never keeps an always-on elevated shell waiting for commands.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="k">Always-confirm classes + the emergency stop</div>
+    <p>Some actions <b>never auto-approve</b>, no matter how often you've said yes: permanent deletion outside disposable workspaces, formatting drives, registry or security-policy changes, disabling antivirus/firewall, exposing public ports, kernel drivers, <b>money, external messages under your identity, credentials, revealing secrets, destructive Git on shared remotes, publishing or deploying.</b> And one universal stop — hotkey, <i>"Harry, stop everything"</i>, or the phone button — cancels workflows, halts tool calls, preserves logs, and never auto-deletes partial work.</p>
+  </div>
+</section>
+
 <!-- ============ OPERATING MODES ============ -->
 <section id="modes">
   <div class="pbar" data-speed="0.5" style="width:100px;height:48vh;top:10%;right:-45px"></div>
-  <div class="eyebrow"><span class="n">07</span> OPERATING MODES</div>
+  <div class="eyebrow"><span class="n">08</span> OPERATING MODES</div>
   <h2>One Harry. <span class="dim">Six lenses.</span></h2>
   <p class="lede">Modes are <b>policy and context lenses, not separate personalities.</b> Harry picks the mode from intent automatically — "Harry, switch to Career Mode" overrides. Same memory, same rules, different toolbelt.</p>
   <div class="agents">
@@ -830,7 +819,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
 <section id="compiler">
   <div class="pbar deep" data-speed="0.3" style="width:180px;height:66vh;top:24%;left:-95px"></div>
   <div class="pbar" data-speed="0.55" style="width:90px;height:42vh;top:4%;right:-35px"></div>
-  <div class="eyebrow"><span class="n">08</span> EXPERIENCE COMPILER</div>
+  <div class="eyebrow"><span class="n">09</span> EXPERIENCE COMPILER</div>
   <h2>Every consultation <span class="dim">makes the next one unnecessary.</span></h2>
   <p class="lede">Harry doesn't retrain weights — it <b>compiles experience into skills.</b> Cloud-assisted solutions get extracted into playbooks, tested in a sandbox, and promoted up this ladder until they run locally, free, offline.</p>
 
@@ -855,7 +844,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
 <!-- ============ LOCAL MODELS ============ -->
 <section id="models">
   <div class="pbar" data-speed="0.45" style="width:115px;height:52vh;top:14%;left:-55px"></div>
-  <div class="eyebrow"><span class="n">09</span> LOCAL ARSENAL — 16 GB EDITION</div>
+  <div class="eyebrow"><span class="n">10</span> LOCAL ARSENAL — 16 GB EDITION</div>
   <h2>Small specialists, <span class="dim">loaded on demand.</span></h2>
   <p class="lede">Not one giant model — <b>a bench of small specialists.</b> All tags verified on the Ollama library. The winners get chosen by <b>your</b> benchmarks in docs/benchmarks/local-models.md, not internet leaderboards.</p>
 
@@ -889,11 +878,11 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
 <!-- ============ DAY ONE ============ -->
 <section id="dayone">
   <div class="pbar deep" data-speed="0.35" style="width:150px;height:50vh;top:-10%;left:-70px"></div>
-  <div class="eyebrow"><span class="n">10</span> EXECUTION</div>
+  <div class="eyebrow"><span class="n">11</span> EXECUTION</div>
   <h2>Today's win <span class="dim">— the Day 1 loop.</span></h2>
   <div class="dayone">
     <h3>Fresh laptop → Harry speaks. That's the whole win.</h3>
-    <div class="st">STRETCH · "HEY HARRY" WAKE WORD — BUT DON'T FORCE IT TODAY</div>
+    <div class="st">STRETCH · "YO HARRY" WAKE WORD — BUT DON'T FORCE IT TODAY</div>
     <div class="steps">
       <div class="step"><b>01</b>Windows Update + HP / NVIDIA drivers</div>
       <div class="step"><b>02</b>winget: Git · Python 3.12 · VS Code · Node 24</div>
@@ -936,13 +925,13 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
   <div class="f-chev"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <p class="fq">"The laptop becomes the <span>control plane</span>."</p>
   <p class="fs">— YOUR OWN ROADMAP · THE SMARTEST LINE IN IT</p>
-  <p class="fs b">AMAZWI · VOICES — HARRY · HYBRID ADAPTIVE REASONING &amp; RESPONSE SYSTEM · ROADMAP v1.2 · 16 PHASES</p>
+  <p class="fs b">AMAZWI · VOICES — HARRY · HYBRID ADAPTIVE REASONING &amp; RESPONSE SYSTEM · ROADMAP v1.3 · 16 PHASES</p>
 </footer>
 
 </div>
 
 <script>
-/* ---------------- Phase data (roadmap v1.2 — 16 phases) ---------------- */
+/* ---------------- Phase data (roadmap v1.3 — 16 phases) ---------------- */
 const PHASES=[
  {n:0,ver:'FOUNDATION',title:'Fresh Machine Foundation',obj:'Turn the reset laptop into a known, secure dev environment and record its real hardware. Every later decision leans on docs/hardware.md.',
   ship:['Windows updated · HP + NVIDIA drivers current','Git, Python 3.12, VS Code, Node 24 LTS installed','Ollama ≥ 0.17.4 · Codex CLI + Claude Code signed in on subscription','Hardware audit committed to docs/hardware.md'],
@@ -966,9 +955,9 @@ const PHASES=[
   note:'<b>RAM is not VRAM.</b> A GTX 1650-class GPU (~4 GB) stays a 4 GB GPU after the 32 GB upgrade — CPU inference remains the workhorse, which is exactly why the 4B model is the always-on brain.'},
 
  {n:1,ver:'v0.1 · VOICE',title:'Harry Speaks',obj:'A complete local voice loop: push-to-talk → transcribe → local LLM → spoken reply. Wake word only after the loop is stable — debugging four subsystems at once hides which one failed.',
-  ship:['Silero VAD + faster-whisper transcription','Ollama running qwen3.5:4b (then benchmark alternatives)','Kokoro speaking replies through the speakers','openWakeWord “Hey Harry” — stretch goal, not day one'],
-  skills:['conversation.respond','system.time','system.health','audio.input_test','model.status'],
-  gate:'95%+ wake-command reliability after tuning · the full loop works with Wi-Fi OFF · zero cloud traffic during the local-only test · latency you can live with.',
+  ship:['Silero VAD + faster-whisper transcription','Ollama running qwen3.5:4b (then benchmark alternatives)','Kokoro speaking replies through the speakers','Phase 1B: first-run onboarding → local profile, personality + voice chosen','openWakeWord “Yo Harry” — stretch goal, not day one'],
+  skills:['conversation.respond','profile.create','personality.update','voice.set_profile','audio.input_test','model.status'],
+  gate:'Full loop works with Wi-Fi OFF, zero cloud traffic · onboarding runs end-to-end and you can inspect, edit and delete everything it saved · chosen voice survives a restart · wake word hits 95%+ once enabled.',
   fun:'The first time Harry answers you out loud, offline, this stops being a document.',
   inst:[
    {t:'Project + venv',c:'mkdir harry ; cd harry\npy -3.12 -m venv .venv\n.\\.venv\\Scripts\\Activate.ps1',w:'Isolated environment, pinned dependency file. Never global-install the AI stack.'},
@@ -976,23 +965,24 @@ const PHASES=[
    {t:'Silero VAD',u:'https://github.com/snakers4/silero-vad',c:'pip install silero-vad',w:'Detects speech start/end so you never transcribe silence; enables barge-in later.'},
    {t:'espeak-ng (Kokoro dep)',u:'https://github.com/espeak-ng/espeak-ng/releases',c:'# download and run espeak-ng.msi from Releases',w:'Required on Windows for Kokoro’s phonemization. Install before Kokoro.'},
    {t:'Kokoro (TTS)',u:'https://github.com/hexgrad/kokoro',c:'pip install kokoro soundfile',w:'82M params, ~330 MB, Apache-licensed, runs happily on CPU. Piper stays a fallback only — its original repo is archived.'},
-   {t:'openWakeWord',u:'https://github.com/dscripka/openWakeWord',c:'pip install openwakeword',w:'Test a stock word first (“hey jarvis”) to prove the pipeline, then train the custom “Hey Harry” with their notebook.'},
-   {t:'The first model',u:'https://ollama.com/library/qwen3.5',c:'ollama pull qwen3.5:4b',w:'3.4 GB, 256K context, tools + thinking + native vision. The always-on candidate.'}
+   {t:'openWakeWord',u:'https://github.com/dscripka/openWakeWord',c:'pip install openwakeword',w:'Test a stock word first (“hey jarvis”) to prove the pipeline, then train the custom “Yo Harry” with their notebook.'},
+   {t:'The first model',u:'https://ollama.com/library/qwen3.5',c:'ollama pull qwen3.5:4b',w:'3.4 GB, 256K context, tools + thinking + native vision. The always-on candidate.'},
+   {t:'Identity as config',c:'code config/profile.yaml config/personality.yaml config/voice.yaml',w:'Who you are, how Harry behaves, which voice speaks — explicit editable files, never assumptions buried in prompts. “Harry, be less chatty” edits these, auditable and reversible.'}
   ],
-  note:'Do not chase full-duplex conversation yet — <b>barge-in and echo cancellation are separate engineering problems</b>, deliberately deferred. Push-to-talk first, wake word second, interruptions much later.'},
+  note:'Phase 1B is where Harry stops being a generic chatbot: he introduces himself, asks how you want to work together, and saves a profile you can read, edit and delete — memory only with consent. Barge-in and echo cancellation stay deliberately deferred: <b>push-to-talk first, “Yo Harry” second, interruptions much later.</b>'},
 
  {n:2,ver:'v0.2 · HANDS',title:'Core + Tool Execution',obj:'From voice chatbot to assistant that does things. Orchestrator, typed skill registry, permission engine, audit log, task IDs, approval workflow — security enforced in code.',
-  ship:['Permission tiers 0–3 enforced in the policy engine','Audit log that answers “what did you change in the last hour?”','app.open, file ops, allowlisted PowerShell wrappers','★ Harry becomes an MCP client — the ecosystem unlock'],
+  ship:['Permission tiers 0–3 + the Windows Authority Model: risk ladder, scoped grants, temporary elevation','Audit log that answers “what did you change in the last hour?”','Emergency stop: hotkey + “Harry, stop everything” + phone button','app.open, file ops, allowlisted PowerShell wrappers','★ Harry becomes an MCP client — the ecosystem unlock'],
   skills:['app.open','file.search','file.create','powershell.safe','browser.open_url'],
   skillsHi:['file.delete — approval gated'],
-  gate:'10 useful deterministic operations run safely · no unrestricted shell exists · approvals actually block · every tool call writes an audit record.',
+  gate:'10 useful deterministic operations run safely · no unrestricted shell exists · approvals actually block · every tool call writes an audit record · the emergency stop halts a running workflow, preserves logs, deletes nothing.',
   fun:'“Harry, create a folder called prototype and open it in VS Code.” — and it just happens.',
   inst:[
    {t:'Harry Core runtime',c:'pip install fastapi uvicorn pydantic pyyaml',w:'FastAPI + Pydantic per the architecture — one API serves voice, phone and CLI clients.'},
    {t:'MCP Python SDK',u:'https://modelcontextprotocol.io',c:'pip install "mcp[cli]"',w:'Harry speaks the open tool standard instead of hand-rolling every integration.'},
    {t:'Reference MCP servers',u:'https://github.com/modelcontextprotocol/servers',w:'Wire filesystem + git + time through your permission engine first. Battle-tested skeletons to study.'}
   ],
-  note:'Every MCP server — official or community — connects <b>through Harry’s policy engine, never directly to a model.</b> And the reverse trick: expose Harry’s own audited skills as an MCP server, so Claude Code and Codex can call Harry’s tools under Harry’s rules.'},
+  note:'Every MCP server connects <b>through Harry’s policy engine, never directly to a model</b> — and expose Harry’s own audited skills as an MCP server so Claude Code and Codex work under Harry’s rules. Authority upgrade from §8A: an approval can become a remembered <b>scoped</b> grant (“always allow VS Code in Personal Projects”), but always-confirm classes never auto-approve and no always-on elevated shell ever exists.'},
 
  {n:3,ver:'v0.3 · MEMORY',title:'Knowledge & Retrieval',obj:'Durable, typed, explicit memory — session, project, preference, episodic, knowledge index — without dumping your laptop into model prompts.',
   ship:['SQLite: memories, projects, tasks, documents, approvals','Local embeddings via Ollama (0.6B — tiny, fast)','Retrieval that cites source provenance on every answer','Privacy excludes: .ssh, credential stores, vaults, AppData'],
@@ -1048,7 +1038,7 @@ const PHASES=[
    {t:'FFmpeg',u:'https://ffmpeg.org',c:'winget install Gyan.FFmpeg',w:'The entire media utility layer — frame sampling, audio extraction, conversion.'},
    {t:'Vision B-side',u:'https://ollama.com/library/gemma3',c:'ollama pull gemma3:4b',w:'Benchmark against qwen3.5:4b’s native vision. Keep whichever reads your screenshots better; drop the other.'}
   ],
-  note:'v1.2 novelty: <b>qwen3.5 accepts images natively</b> — your always-on 4B may already be your vision model. One resident model instead of two is pure RAM profit on 16 GB.'},
+  note:'Worth knowing: <b>qwen3.5 accepts images natively</b> — your always-on 4B may already be your vision model. One resident model instead of two is pure RAM profit on 16 GB.'},
 
  {n:8,ver:'v0.8 · REMOTE',title:'Secure Remote Harry',obj:'Harry from your phone — with zero public ports. Private overlay network only; the laptop stays invisible to the internet.',
   ship:['Tailscale/WireGuard-class private network','PWA: hold-to-talk, approvals, task status, stop button','Device auth + session tokens + rate limiting','Nothing exposed: no port-forward of 11434 or FastAPI'],
@@ -1066,7 +1056,8 @@ const PHASES=[
   fun:'Wake up to a spoken briefing Harry prepared while you slept.',
   inst:[
    {t:'APScheduler',u:'https://apscheduler.readthedocs.io',c:'pip install apscheduler',w:'Cron-style + interval scheduling inside the asyncio core; durable state stays in SQLite. Graduate to a heavier queue only if Phase 9 proves you need it.'}
-  ]},
+  ],
+  note:'v1.3 makes it explicit: <b>no heavyweight workflow engine (Windmill or otherwise) as a core dependency.</b> asyncio + APScheduler + SQLite state carries Harry until real Phase 9 complexity proves it can’t.'},
 
  {n:10,ver:'FALLBACK · COMPUTER USE',title:'Desktop Vision & Control',obj:'GUI automation for apps with no API — fallback infrastructure, never the preferred layer. Order of attack: API → CLI → OS automation → browser → pixels.',
   ship:['Screenshot → identify element → click / type / scroll → verify','Deterministic browser automation before any pixel work','Allowlisted apps only · stop hotkey · timeouts · screenshot checkpoints'],
