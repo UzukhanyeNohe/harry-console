@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>HARRY — Hybrid Adaptive Reasoning &amp; Response sYstem</title>
 <meta name="theme-color" content="#050805">
 <meta name="mobile-web-app-capable" content="yes">
@@ -360,6 +360,82 @@ footer .fs.b{margin-top:26px;color:var(--muted)}
 .srcs a{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;padding:8px 14px;border-radius:100px;border:1px solid var(--stroke);color:var(--muted);text-decoration:none;transition:.25s;background:rgba(185,255,60,.03)}
 .srcs a:hover{border-color:var(--stroke-brt);color:var(--lime)}
 .vtag{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:.24em;color:#0B1404;background:var(--lime);border-radius:100px;padding:4px 12px;margin-left:14px;vertical-align:middle;box-shadow:0 0 18px rgba(185,255,60,.45)}
+
+/* ---------- responsive · fit every screen ---------- */
+html{-webkit-text-size-adjust:100%}
+img,svg,canvas{max-width:100%}
+.eyebrow,.h-eyebrow{flex-wrap:wrap}
+
+/* grid/flex children default to min-width:auto, so the pre-formatted
+   .cmd / .pt-flow scrollers size their track to full unwrapped text and
+   blow the page out sideways. Let the tracks shrink; the code blocks
+   keep their own internal scrollbar. */
+.ph-grid>*,.irow,.irow>*,.pattern>*,.lib>*,.lrow>*,.insight>*,
+.agents>*,.steps>*,.blk,.pt-body,.in-body,.ph-card,.ph-top{min-width:0}
+.cmd,.pt-flow{max-width:100%}
+
+/* anchor targets must clear the fixed nav instead of landing under it */
+section,.phase{scroll-margin-top:96px}
+
+/* notch + home-indicator safe areas (standalone PWA, viewport-fit=cover) */
+nav{padding-top:calc(18px + env(safe-area-inset-top));
+  padding-left:calc(28px + env(safe-area-inset-left));
+  padding-right:calc(28px + env(safe-area-inset-right))}
+.wrap,.ps-inner{padding-left:calc(28px + env(safe-area-inset-left));
+  padding-right:calc(28px + env(safe-area-inset-right))}
+footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
+
+@media(max-width:900px){section{padding:110px 0 26px}}
+
+@media(max-width:700px){
+  .wrap,.ps-inner{padding-left:calc(22px + env(safe-area-inset-left));
+    padding-right:calc(22px + env(safe-area-inset-right))}
+  nav{padding:calc(14px + env(safe-area-inset-top)) calc(22px + env(safe-area-inset-right)) 14px calc(22px + env(safe-area-inset-left))}
+  .hero{padding:110px 0 60px}
+  section,.phase{scroll-margin-top:78px}
+  .timeline{padding-top:56px}
+  .phase{padding:0 0 22px 52px}
+  .ph-card{padding:26px 24px}
+  .callout{padding:26px 24px;margin-top:38px}
+}
+
+@media(max-width:480px){
+  section{padding:88px 0 22px}
+  .wrap,.ps-inner{padding-left:calc(16px + env(safe-area-inset-left));
+    padding-right:calc(16px + env(safe-area-inset-right))}
+  nav{padding:calc(12px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) 12px calc(16px + env(safe-area-inset-left))}
+  .nv-brand{font-size:12.5px;letter-spacing:.2em}
+  .nv-right{gap:10px;font-size:10px;letter-spacing:.1em}
+  .nv-ring{width:28px;height:28px}
+  .lede{font-size:16px;margin-bottom:44px}
+  .timeline{padding-top:44px}
+  .phase{padding:0 0 20px 42px}
+  .ph-card{padding:22px 18px}
+  .ph-top{gap:12px}
+  .ph-toggle{width:34px;height:34px;font-size:16px}
+  .ph-ghost{font-size:clamp(56px,17vw,86px)}
+  .mnode{white-space:normal;text-align:center;font-size:11px;padding:10px 15px}
+  .mnode.core{font-size:12px;padding:13px 20px}
+  .agents,.steps{grid-template-columns:1fr}
+  .me-note,.dayone{padding:26px 20px}
+  .callout{padding:22px 18px}
+  .lib{padding:24px 2px}
+  .lib:hover{padding-left:8px}
+  footer{padding:70px 0 calc(80px + env(safe-area-inset-bottom))}
+}
+
+@media(max-width:360px){
+  #navCount{display:none}
+  .hero-meta{gap:8px 18px}
+}
+
+/* phones held sideways */
+@media(max-height:540px) and (orientation:landscape){
+  .hero{min-height:0;padding:104px 0 48px}
+  .amazwi{height:clamp(96px,20vh,150px)}
+  .amazwi-zone{min-height:0}
+  section{padding:84px 0 20px}
+}
 
 </style>
 </head>
