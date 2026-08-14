@@ -323,6 +323,44 @@ footer .fs.b{margin-top:26px;color:var(--muted)}
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
   html{scroll-behavior:auto}
 }
+
+/* ---------- install rows (v1.2) ---------- */
+.blk.wide{grid-column:1/-1}
+.irow{display:grid;grid-template-columns:210px 1fr;gap:6px 26px;padding:13px 0;border-bottom:1px dashed rgba(185,255,60,.09);align-items:start}
+.irow:last-child{border-bottom:none}
+.irow .in{font-size:14px;color:var(--ink);font-weight:500}
+.irow .in a{font-family:var(--mono);font-size:10.5px;color:var(--lime-dim);text-decoration:none;display:block;margin-top:4px;word-break:break-all;letter-spacing:.02em}
+.irow .in a:hover{color:var(--lime)}
+.cmd{font-family:var(--mono);font-size:12px;color:#CDFF6B;background:rgba(185,255,60,.05);border:1px solid var(--stroke);border-radius:10px;padding:10px 14px;overflow-x:auto;white-space:pre;cursor:pointer;position:relative;transition:.25s;line-height:1.7}
+.cmd:hover{border-color:var(--stroke-brt)}
+.cmd::after{content:'COPY';position:absolute;top:7px;right:10px;font-size:8.5px;letter-spacing:.22em;color:var(--faint);transition:.2s}
+.cmd:hover::after{color:var(--lime)}
+.cmd.copied::after{content:'COPIED ✓';color:var(--lime)}
+.irow .why{font-size:12.5px;color:var(--muted);margin-top:7px}
+.ph-note{margin-top:22px;font-size:13.5px;color:var(--pale);border:1px dashed rgba(233,255,176,.32);border-radius:14px;padding:14px 18px;line-height:1.65}
+.ph-note b{color:var(--ink);font-weight:500}
+.ph-note::before{content:'⚠ ';color:var(--lime)}
+@media(max-width:700px){.irow{grid-template-columns:1fr}}
+
+/* ---------- maturity ladder (v1.2) ---------- */
+.ladder{margin-top:10px}
+.lrow{display:grid;grid-template-columns:64px 190px 1fr;gap:8px 26px;align-items:center;padding:17px 0;border-bottom:1px solid var(--stroke)}
+.lrow:last-child{border-bottom:none}
+.lrow .lv{font-family:var(--display);font-weight:700;font-size:22px;color:transparent;-webkit-text-stroke:1px rgba(185,255,60,.35)}
+.lrow.lit .lv{color:var(--lime);-webkit-text-stroke:1px transparent;text-shadow:0 0 22px rgba(185,255,60,.5)}
+.lrow .ln{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;color:var(--pale);text-transform:uppercase}
+.lrow .ld{font-size:13.5px;color:var(--muted)}
+.lrow .ld b{color:var(--ink);font-weight:500}
+.lbar{grid-column:2/4;height:3px;border-radius:3px;background:rgba(185,255,60,.08);overflow:hidden;margin-top:2px}
+.lbar i{display:block;height:100%;width:var(--w,10%);border-radius:3px;background:linear-gradient(90deg,var(--lime-deep),var(--lime-dim) 60%,var(--lime));box-shadow:0 0 10px rgba(185,255,60,.35);transform-origin:left}
+@media(max-width:640px){.lrow{grid-template-columns:50px 1fr}.lrow .ld{grid-column:1/3}.lbar{grid-column:1/3}}
+
+/* ---------- source chips (v1.2) ---------- */
+.srcs{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+.srcs a{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;padding:8px 14px;border-radius:100px;border:1px solid var(--stroke);color:var(--muted);text-decoration:none;transition:.25s;background:rgba(185,255,60,.03)}
+.srcs a:hover{border-color:var(--stroke-brt);color:var(--lime)}
+.vtag{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:.24em;color:#0B1404;background:var(--lime);border-radius:100px;padding:4px 12px;margin-left:14px;vertical-align:middle;box-shadow:0 0 18px rgba(185,255,60,.45)}
+
 </style>
 </head>
 <body>
@@ -335,7 +373,7 @@ footer .fs.b{margin-top:26px;color:var(--muted)}
     <span class="nv-brand">HAR<span>RY</span></span>
   </a>
   <div class="nv-right">
-    <span id="navCount"><b>0/13</b> PHASES</span>
+    <span id="navCount"><b>0/16</b> PHASES</span>
     <svg class="nv-ring" viewBox="0 0 34 34">
       <circle class="tr" cx="17" cy="17" r="14"/>
       <circle class="pr" id="navRing" cx="17" cy="17" r="14"/>
@@ -348,19 +386,21 @@ footer .fs.b{margin-top:26px;color:var(--muted)}
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero-left">
-    <div class="h-eyebrow">AMAZWI — PERSONAL AI OPERATING LAYER</div>
+    <div class="h-eyebrow">AMAZWI — PERSONAL AI OPERATING LAYER<span class="vtag">ROADMAP v1.2</span></div>
     <h1>HARRY</h1>
     <div class="h-acr"><b>H</b>ybrid <b>A</b>daptive <b>R</b>easoning &amp; <b>R</b>esponse s<b>Y</b>stem</div>
     <p class="hero-tag">Not a chatbot. A <em>control plane</em> above Windows that commands local models, Claude, OpenAI, your files, your code and your voice — reversible, auditable, and entirely yours.</p>
     <div class="hero-meta">
       <span><b>MODE</b> · VOICE-FIRST / PROJECTOR</span>
-      <span><b>DOCTRINE</b> · LOCAL-FIRST</span>
-      <span><b>PHASES</b> · 13</span>
+      <span><b>DOCTRINE</b> · LOCAL-FIRST · SUBSCRIPTION-FIRST</span>
+      <span><b>PHASES</b> · 16</span>
+      <span><b>RAM</b> · 16 GB TODAY → 32 GB PLANNED</span>
+      <span><b>REVISED</b> · 14 AUG 2026</span>
     </div>
     <div class="hero-links">
       <a class="hlink" href="#phases">Mission timeline</a>
-      <a class="hlink" href="#council">AI council</a>
-      <a class="hlink" href="#libs">UI arsenal</a>
+      <a class="hlink" href="#council">Subscription bridges</a>
+      <a class="hlink" href="#compiler">Experience compiler</a>
     </div>
   </div>
   <div class="amazwi-zone">
@@ -385,7 +425,7 @@ footer .fs.b{margin-top:26px;color:var(--muted)}
   <div class="pbar deep" data-speed="0.25" style="width:170px;height:64vh;top:30%;left:-90px"></div>
   <div class="eyebrow"><span class="n">01</span> ANALYSIS</div>
   <h2>What you're actually building <span class="dim">— the read.</span></h2>
-  <p class="lede">All 2,300 lines reviewed. The architecture is <b>sound and achievable</b> on your hardware. Four decisions carry the whole project — protect them.</p>
+  <p class="lede">All 3,253 lines of v1.2 reviewed — and this pass, <b>every model tag, installer and CLI flag was verified against live sources.</b> The architecture is sound and achievable on 16 GB today. Six decisions carry the whole project — protect them.</p>
 
   <div class="insight">
     <div class="in-num">01</div>
@@ -411,6 +451,20 @@ footer .fs.b{margin-top:26px;color:var(--muted)}
   <div class="insight">
     <div class="in-num">04</div>
     <div class="in-body">
+      <h3>Subscription-first: the money problem, solved structurally</h3>
+      <p>v1.2's biggest upgrade. Harry's cloud escalation runs through the tools your subscriptions already include — <b>Codex CLI and Claude Code, orchestrated as command-line workers</b> with structured JSON output. No API billing on day one, no scraping, no borrowed tokens. Direct APIs stay defined in <code style="font-family:var(--mono);font-size:12.5px;color:#CDFF6B">models.yaml</code> but switched off until they're actually worth paying for.</p>
+    </div>
+  </div>
+  <div class="insight">
+    <div class="in-num">05</div>
+    <div class="in-body">
+      <h3>The Experience Compiler — Harry gets smarter without retraining</h3>
+      <p>Every cloud consultation is recorded, reflected on, and — when a workflow stabilizes — <b>compiled into a tested local skill</b> that runs free and offline next time. A seven-level maturity ladder (L0→L6) governs promotion. This is system-level learning: cheaper, inspectable and reversible, where fine-tuning would be none of those.</p>
+    </div>
+  </div>
+  <div class="insight">
+    <div class="in-num">06</div>
+    <div class="in-body">
       <h3>Phase gates kill demo-driven development</h3>
       <p>"The demo worked once" never advances a phase. Each has measurable exit criteria — 95% wake reliability, proven Git rollback, injection tests passing. <b>This is what makes Harry reliable instead of a weekend toy.</b></p>
     </div>
@@ -432,31 +486,31 @@ footer .fs.b{margin-top:26px;color:var(--muted)}
     </div>
     <div class="map-link"></div>
     <div class="map-tier">
-      <div class="mnode">OLLAMA · qwen / gemma</div>
-      <div class="mnode">CLAUDE · deep reasoning</div>
-      <div class="mnode">OPENAI · reasoning / multimodal</div>
+      <div class="mnode">OLLAMA · qwen3.5 / gemma3 — free, offline</div>
+      <div class="mnode">CLAUDE API · later, optional</div>
+      <div class="mnode">OPENAI API · later, optional</div>
     </div>
     <div class="map-link"></div>
     <div class="map-tier">
-      <div class="mnode impl">CLAUDE CODE · implementer</div>
-      <div class="mnode impl">CODEX CLI · implementer</div>
+      <div class="mnode impl">CLAUDE CODE · subscription bridge</div>
+      <div class="mnode impl">CODEX CLI · subscription bridge</div>
       <div class="mnode">SKILLS / MCP · files · git · email · desktop</div>
     </div>
   </div>
-  <p class="map-note">The separation that matters: <b>Harry owns identity and permissions.</b> Everything below the core is replaceable.</p>
+  <p class="map-note">The separation that matters: <b>Harry owns identity and permissions.</b> Everything below the core is replaceable — and on day one, the only cloud lanes that need to exist are the two subscription bridges.</p>
 </section>
 
 <!-- ============ PHASES ============ -->
 <section id="phases" style="padding-bottom:0">
   <div class="eyebrow"><span class="n">03</span> MISSION TIMELINE</div>
-  <h2>Thirteen phases. <span class="dim">Each ships something you can use.</span></h2>
-  <p class="lede" style="margin-bottom:0">Tap a phase to open its briefing. Mark it complete when its gate passes — <b>progress saves between visits.</b> Never advance on a demo that worked once.</p>
+  <h2>Sixteen phases. <span class="dim">Each ships something you can use.</span></h2>
+  <p class="lede" style="margin-bottom:0">Tap a phase to open its briefing — now with <b>every install, exact link and command</b> inside. Tap a command to copy it. Mark a phase complete when its gate passes — <b>progress saves on this device.</b> New in v1.2: Career Intelligence, Product Studio and the Experience Compiler.</p>
 </section>
 </div>
 
 <div class="progress-strip">
   <div class="ps-inner">
-    <div class="ps-label">MISSION <b id="psCount">0/13</b></div>
+    <div class="ps-label">MISSION <b id="psCount">0/16</b></div>
     <div class="ps-bar"><div class="ps-fill" id="psFill"></div></div>
     <div class="ps-next" id="psNext">NEXT · PHASE 00</div>
   </div>
@@ -472,9 +526,9 @@ footer .fs.b{margin-top:26px;color:var(--muted)}
 <section id="council">
   <div class="pbar" data-speed="0.6" style="width:95px;height:46vh;top:6%;left:-30px"></div>
   <div class="pbar deep" data-speed="0.3" style="width:200px;height:70vh;top:38%;right:-110px"></div>
-  <div class="eyebrow"><span class="n">04</span> THE AI COUNCIL</div>
-  <h2>How Claude &amp; ChatGPT <span class="dim">work together through Harry.</span></h2>
-  <p class="lede">Harry doesn't pick a favourite. It chairs a <b>council</b> — each member has a lane, and the expensive ones only get called when the task earns it.</p>
+  <div class="eyebrow"><span class="n">04</span> SUBSCRIPTION BRIDGES &amp; THE COUNCIL</div>
+  <h2>Frontier intelligence, <span class="dim">zero API budget.</span></h2>
+  <p class="lede">v1.2's structural unlock: Harry escalates through <b>Codex CLI and Claude Code — the tools your subscriptions already include</b> — invoked headlessly with structured output. No API keys, no scraping, no borrowed tokens. Harry chairs the council; each member has a lane.</p>
 
   <div class="agents">
     <div class="agent ag-harry">
@@ -486,12 +540,12 @@ footer .fs.b{margin-top:26px;color:var(--muted)}
       <ul><li>Wake word, STT, TTS, intents</li><li>Quick answers, file search</li><li>Private data never leaves</li><li>Free, works offline</li></ul>
     </div>
     <div class="agent ag-claude">
-      <div class="role">Deep reasoning · that's me</div><h3>Claude + Claude Code</h3>
-      <ul><li>Architecture critique &amp; review</li><li>Long-document analysis</li><li>Large-codebase reasoning</li><li>Claude Code implements in-repo</li><li>Adversarial review of Codex's work</li></ul>
+      <div class="role">Bridge B · that's me</div><h3>Claude Code</h3>
+      <ul><li>Subscription login — already paid for</li><li>Large-codebase reasoning &amp; long context</li><li>Implements in-repo · reads AGENTS.md</li><li>Architecture critique of Codex's work</li><li>Headless: claude -p · JSON out</li></ul>
     </div>
     <div class="agent ag-openai">
-      <div class="role">Deep reasoning · alt path</div><h3>OpenAI + Codex</h3>
-      <ul><li>Complex planning &amp; research</li><li>Specialist multimodal work</li><li>Codex implements, refactors, tests</li><li>Adversarial review of Claude's work</li></ul>
+      <div class="role">Bridge A · ChatGPT plan</div><h3>Codex CLI</h3>
+      <ul><li>Subscription sign-in — already paid for</li><li>Implements, refactors, debugs, tests</li><li>Read-only sandbox by default</li><li>Adversarial review of Claude's work</li><li>Headless: codex exec · JSONL out</li></ul>
     </div>
   </div>
 
@@ -528,11 +582,26 @@ footer .fs.b{margin-top:26px;color:var(--muted)}
     </div>
   </div>
 
+  <div class="pattern">
+    <div class="pt-key"><span class="pn">⌘</span>THE BRIDGE CALLS</div>
+    <div class="pt-body">
+      <h3>The two commands Harry actually runs</h3>
+      <div class="pt-flow">claude -p "&lt;scoped task&gt;" --output-format json  →  { result, session_id, total_cost_usd }</div>
+      <div class="pt-flow">codex exec --json "&lt;scoped task&gt;"  →  JSONL events … turn.completed { usage }</div>
+      <p>Each adapter is a <b>~50-line subprocess wrapper</b>: capture exit status, parse the JSON, collect the Git diff, run tests, log the consultation. <code style="font-family:var(--mono);font-size:12px;color:#CDFF6B">--resume</code> continues Claude Code sessions; <code style="font-family:var(--mono);font-size:12px;color:#CDFF6B">--output-schema</code> makes Codex return typed objects. Orchestration, not screen-scraping.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="k">The boundary — non-negotiable</div>
+    <p>A ChatGPT or Claude subscription is <b>not a general-purpose API entitlement.</b> Harry never lifts, copies or repurposes provider auth tokens as API credentials, and never automates the chat interfaces. Three clean lanes only: <b>local Ollama</b> (free, private) · <b>subscription-native CLIs</b> (Codex, Claude Code) · <b>direct APIs</b> — optional, later, separately billed, plugged into the same gateway without changing the architecture. When a plan's usage window runs dry, Harry <b>queues the task and tells you</b> — announced out loud: <i>"This exceeds my local confidence threshold. I'm consulting Codex."</i></p>
+  </div>
+
   <div class="me-note">
     <h3>Where <span>I</span> fit — right now, and inside Harry</h3>
     <p><b>Today, in this chat:</b> your architecture sparring partner. Bring me phase plans to attack, skill manifests to draft, code to review, UI to design — like this console. When a gate fails, bring me the logs.</p>
-    <p><b>Phase 0–4, as Claude Code:</b> I live in your terminal, read <code>AGENTS.md</code>, and implement inside the repo under Harry's permission rules. Codex and I share the same repo docs, so we stay consistent without ever talking to each other.</p>
-    <p><b>Phase 6+, via the Claude API:</b> Harry calls me through your cloud gateway as the deep-reasoning and critique route. You configure me in <code>models.yaml</code> — never hard-coded. If a better model exists someday, Harry swaps me out in one line. That's how it should be.</p>
+    <p><b>Phase 0–4, as Claude Code:</b> I live in your terminal on your subscription — already paid for. I read <code>AGENTS.md</code> and implement inside the repo under Harry's permission rules. Codex and I share the same repo docs, so we stay consistent without ever talking to each other.</p>
+    <p><b>Phase 6+, as a bridge:</b> Harry shells out to <code>claude -p … --output-format json</code> as the deep-reasoning and critique lane — still on subscription. The direct API stays defined in <code>models.yaml</code> but disabled until you choose to fund it. If a better model exists someday, Harry swaps me out in one line. That's how it should be.</p>
     <p><b>The continuity trick:</b> ChatGPT and I never share memory — <b>the repo is our shared brain.</b> <code>README.md</code>, <code>AGENTS.md</code>, <code>docs/decisions/</code>. Keep those honest and both councils stay in sync forever.</p>
   </div>
 </section>
@@ -619,31 +688,171 @@ footer .fs.b{margin-top:26px;color:var(--muted)}
     <div class="step"><b>P12</b>home assistant</div>
   </div>
 
+  <div class="lib-group">Learn from the neighbours — study, don't copy</div>
+  <div class="lib">
+    <div><div class="name">OpenHands</div><div class="url">github.com/OpenHands/OpenHands</div><span class="tag">AGENT ARCH</span></div>
+    <div><div class="what">Study its <b>sandboxed execution, task loops and action/result traces.</b> Don't copy the assumption that every task is software engineering — Harry is a whole-life layer.</div></div>
+  </div>
+  <div class="lib">
+    <div><div class="name">Open Interpreter</div><div class="url">github.com/openinterpreter/open-interpreter</div><span class="tag">NL → COMPUTER</span></div>
+    <div><div class="what">Study <b>natural-language computer control and model/tool separation.</b> Don't copy unrestricted code execution — Harry's typed skills + approvals are the whole point.</div></div>
+  </div>
+  <div class="lib">
+    <div><div class="name">Letta</div><div class="url">docs.letta.com</div><span class="tag">MEMORY</span></div>
+    <div><div class="what">Study <b>stateful agents and memory-first design.</b> Harry's twist: memory must be user-auditable and tied to the capability maturity ladder.</div></div>
+  </div>
+  <div class="lib">
+    <div><div class="name">LangGraph</div><div class="url">docs.langchain.com — langgraph</div><span class="tag">WORKFLOWS</span></div>
+    <div><div class="what">Study <b>durable execution, human-in-the-loop, resumable state.</b> Don't adopt for popularity — a simple state machine carries Harry until Phase 9 proves otherwise.</div></div>
+  </div>
+  <div class="lib">
+    <div><div class="name">Home Assistant</div><div class="url">home-assistant.io</div><span class="tag">ALWAYS-ON</span></div>
+    <div><div class="what">Study <b>long-running local-first service design and event-driven integrations</b> — the best reference for what Phase 11 reliability looks like in the wild.</div></div>
+  </div>
+
   <div class="callout">
     <div class="k">Security rule — non-negotiable</div>
     <p>Every MCP server, official or community, connects <b>through Harry's policy engine</b> — never directly to a model. A community Gmail server gets <code>email.read</code> only; <code class="hot">email.send</code> stays approval-gated in your code. Treat third-party servers as untrusted by default, pin versions, and read the source of anything touching credentials.</p>
   </div>
 </section>
 
+<!-- ============ OPERATING MODES ============ -->
+<section id="modes">
+  <div class="pbar" data-speed="0.5" style="width:100px;height:48vh;top:10%;right:-45px"></div>
+  <div class="eyebrow"><span class="n">07</span> OPERATING MODES</div>
+  <h2>One Harry. <span class="dim">Six lenses.</span></h2>
+  <p class="lede">Modes are <b>policy and context lenses, not separate personalities.</b> Harry picks the mode from intent automatically — "Harry, switch to Career Mode" overrides. Same memory, same rules, different toolbelt.</p>
+  <div class="agents">
+    <div class="agent ag-harry">
+      <div class="role">Everyday default</div><h3>Personal / EA</h3>
+      <ul><li>Files, email, calendar, reminders</li><li>"Put on the next episode" — app/API first, browser automation second, pixels last</li><li>Household + projector integrations</li></ul>
+    </div>
+    <div class="agent ag-claude">
+      <div class="role">The craft</div><h3>Developer</h3>
+      <ul><li>Repos, architecture, debugging, review</li><li>Local model for small edits · bridges for real work</li><li>Employer work stays logically separated — IP respected in code</li></ul>
+    </div>
+    <div class="agent ag-local">
+      <div class="role">Evidence in</div><h3>Research</h3>
+      <ul><li>Current information, compared sources</li><li>Evidence-backed briefs into project memory</li><li>Necessarily online — and says so</li></ul>
+    </div>
+    <div class="agent ag-openai">
+      <div class="role">Making things</div><h3>Creative</h3>
+      <ul><li>Design ideation, media workflows</li><li>Light analysis local · heavy generation stays a cloud specialist skill</li><li>Brand assets, scripts, storyboards</li></ul>
+    </div>
+    <div class="agent ag-claude">
+      <div class="role">Phase 14</div><h3>Product Studio</h3>
+      <ul><li>Idea → validated problem → shipped prototype</li><li>Harry owns state, approvals and memory</li><li>Agents implement; you decide</li></ul>
+    </div>
+    <div class="agent ag-harry">
+      <div class="role">Phase 13</div><h3>Career Intelligence</h3>
+      <ul><li>Work evidence → redacted achievement bank</li><li>Living CV + portfolio, shown as diffs</li><li>Interview Lab with scored drills</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE COMPILER ============ -->
+<section id="compiler">
+  <div class="pbar deep" data-speed="0.3" style="width:180px;height:66vh;top:24%;left:-95px"></div>
+  <div class="pbar" data-speed="0.55" style="width:90px;height:42vh;top:4%;right:-35px"></div>
+  <div class="eyebrow"><span class="n">08</span> EXPERIENCE COMPILER</div>
+  <h2>Every consultation <span class="dim">makes the next one unnecessary.</span></h2>
+  <p class="lede">Harry doesn't retrain weights — it <b>compiles experience into skills.</b> Cloud-assisted solutions get extracted into playbooks, tested in a sandbox, and promoted up this ladder until they run locally, free, offline.</p>
+
+  <div class="pt-flow" style="margin-bottom:44px">task → local attempt → consult bridge → extract procedure → generate tests → sandbox replay → promote</div>
+
+  <div class="ladder">
+    <div class="lrow"><div class="lv">L0</div><div class="ln">Unknown</div><div class="ld">No reliable procedure exists.</div><div class="lbar"><i style="--w:8%"></i></div></div>
+    <div class="lrow"><div class="lv">L1</div><div class="ln">Assisted</div><div class="ld">Solved once with Codex or Claude. Consultation logged.</div><div class="lbar"><i style="--w:20%"></i></div></div>
+    <div class="lrow"><div class="lv">L2</div><div class="ln">Remembered</div><div class="ld">Structured lesson + prior trace stored in memory.</div><div class="lbar"><i style="--w:34%"></i></div></div>
+    <div class="lrow"><div class="lv">L3</div><div class="ln">Playbook</div><div class="ld">A deterministic runbook exists — preconditions, steps, failure modes.</div><div class="lbar"><i style="--w:50%"></i></div></div>
+    <div class="lrow"><div class="lv">L4</div><div class="ln">Skill candidate</div><div class="ld">Encoded as a local skill manifest with a test suite.</div><div class="lbar"><i style="--w:66%"></i></div></div>
+    <div class="lrow"><div class="lv">L5</div><div class="ln">Verified local</div><div class="ld">Passes repeatable sandbox tests <b>without cloud help.</b></div><div class="lbar"><i style="--w:83%"></i></div></div>
+    <div class="lrow lit"><div class="lv">L6</div><div class="ln">Local default</div><div class="ld"><b>Harry tries the local skill first</b> — escalates only on failure or low confidence.</div><div class="lbar"><i style="--w:100%"></i></div></div>
+  </div>
+
+  <div class="callout">
+    <div class="k">The mentor engine</div>
+    <p>When the same class of problem escalates repeatedly, Harry proposes the promotion itself: <i>"I have consulted Codex for this workflow six times. I can turn the stable part into a local skill and test it. Approve?"</i> The consultation dashboard shows which tasks burn the most bridge usage — <b>that queue is the roadmap for what Harry learns next.</b> Demotion is one command when a skill regresses.</p>
+  </div>
+</section>
+
+<!-- ============ LOCAL MODELS ============ -->
+<section id="models">
+  <div class="pbar" data-speed="0.45" style="width:115px;height:52vh;top:14%;left:-55px"></div>
+  <div class="eyebrow"><span class="n">09</span> LOCAL ARSENAL — 16 GB EDITION</div>
+  <h2>Small specialists, <span class="dim">loaded on demand.</span></h2>
+  <p class="lede">Not one giant model — <b>a bench of small specialists.</b> All tags verified on the Ollama library. The winners get chosen by <b>your</b> benchmarks in docs/benchmarks/local-models.md, not internet leaderboards.</p>
+
+  <div class="lib">
+    <div><div class="name">local_fast — the orchestrator</div><div class="url">ollama.com/library/qwen3.5</div><span class="tag">ALWAYS-ON · 3.4 GB</span></div>
+    <div><div class="what"><b>qwen3.5:4b</b> — 256K context, tools + thinking + <b>native image input.</b> Intent, routing, conversation, summarization, skill selection. The one model that stays resident.</div><div class="use">Phase 1 · <span style="font-family:var(--mono)">ollama pull qwen3.5:4b</span></div></div>
+  </div>
+  <div class="lib">
+    <div><div class="name">local_deep — second opinion</div><div class="url">ollama.com/library/qwen3.5</div><span class="tag">ON-DEMAND · 6.6 GB</span></div>
+    <div><div class="what"><b>qwen3.5:9b</b> — noticeably smarter, noticeably slower on this CPU. On 16 GB it's a <b>swap-in, not a housemate</b>: unload the 4B first, expect single-digit tokens/sec, benchmark before trusting.</div><div class="use">Phase 6 · <span style="font-family:var(--mono)">ollama pull qwen3.5:9b</span></div></div>
+  </div>
+  <div class="lib">
+    <div><div class="name">local_code — the mechanic</div><div class="url">ollama.com/library/qwen2.5-coder</div><span class="tag">ON-DEMAND · ~4.7 GB</span></div>
+    <div><div class="what"><b>qwen2.5-coder:7b</b> — local code reasoning when a full bridge escalation is overkill. Never the orchestrator. (DeepSeek-Coder 6.7B stays a benchmark curiosity, not a default.)</div><div class="use">Phase 4 · <span style="font-family:var(--mono)">ollama pull qwen2.5-coder:7b</span></div></div>
+  </div>
+  <div class="lib">
+    <div><div class="name">local_vision — the B-side</div><div class="url">ollama.com/library/gemma3</div><span class="tag">BENCHMARK · 3.3 GB</span></div>
+    <div><div class="what"><b>gemma3:4b</b> — the vision challenger. qwen3.5:4b already reads images natively, so run both on your real screenshots and <b>keep exactly one.</b> gemma3n (e2b/e4b) is the battery/latency wildcard worth one afternoon.</div><div class="use">Phase 7 · <span style="font-family:var(--mono)">ollama pull gemma3:4b</span></div></div>
+  </div>
+  <div class="lib">
+    <div><div class="name">embeddings — the librarian</div><div class="url">ollama.com/library/qwen3-embedding</div><span class="tag">RESIDENT · 0.6 GB</span></div>
+    <div><div class="what"><b>qwen3-embedding:0.6b</b> — powers memory search and the knowledge index through sqlite-vec. Small enough to live alongside the orchestrator.</div><div class="use">Phase 3 · <span style="font-family:var(--mono)">ollama pull qwen3-embedding:0.6b</span></div></div>
+  </div>
+
+  <div class="callout">
+    <div class="k">The 16 GB budget — why this bench works</div>
+    <p>Windows idles at ~4 GB. Add faster-whisper small (~1 GB), Kokoro (~0.5 GB), and qwen3.5:4b loaded (~4 GB) — <b>comfortable, with room for VS Code and a browser.</b> The 9B fits only as a temporary swap-in. Set <code>OLLAMA_KEEP_ALIVE</code> so idle models unload, and benchmark the ten metrics that matter: wake-to-answer latency, tokens/sec, peak RAM, peak VRAM, tool-selection accuracy, JSON reliability, short-code accuracy, screenshot understanding, instruction following, 20-turn stability. <b>After the 32 GB upgrade, re-run everything</b> — the 9B may earn a promotion.</p>
+  </div>
+</section>
+
 <!-- ============ DAY ONE ============ -->
 <section id="dayone">
   <div class="pbar deep" data-speed="0.35" style="width:150px;height:50vh;top:-10%;left:-70px"></div>
-  <div class="eyebrow"><span class="n">07</span> EXECUTION</div>
+  <div class="eyebrow"><span class="n">10</span> EXECUTION</div>
   <h2>Today's win <span class="dim">— the Day 1 loop.</span></h2>
   <div class="dayone">
-    <h3>Fresh laptop → Harry speaks. That's it.</h3>
+    <h3>Fresh laptop → Harry speaks. That's the whole win.</h3>
     <div class="st">STRETCH · "HEY HARRY" WAKE WORD — BUT DON'T FORCE IT TODAY</div>
     <div class="steps">
-      <div class="step"><b>01</b>Windows Update + drivers</div>
-      <div class="step"><b>02</b>Git · Python · VS Code · Node</div>
-      <div class="step"><b>03</b>Ollama + Codex + Claude Code</div>
-      <div class="step"><b>04</b>Hardware audit → docs/hardware.md</div>
-      <div class="step"><b>05</b>venv + pinned deps</div>
-      <div class="step"><b>06</b>Mic test → faster-whisper</div>
-      <div class="step"><b>07</b>Ollama model responds</div>
-      <div class="step"><b>08</b>Kokoro speaks the reply</div>
+      <div class="step"><b>01</b>Windows Update + HP / NVIDIA drivers</div>
+      <div class="step"><b>02</b>winget: Git · Python 3.12 · VS Code · Node 24</div>
+      <div class="step"><b>03</b>Ollama — verify ≥ 0.17.4</div>
+      <div class="step"><b>04</b>Codex CLI + ChatGPT sign-in</div>
+      <div class="step"><b>05</b>Claude Code + subscription login</div>
+      <div class="step"><b>06</b>harry repo · README + AGENTS.md</div>
+      <div class="step"><b>07</b>Hardware audit → docs/hardware.md</div>
+      <div class="step"><b>08</b>venv (3.12) + pinned deps</div>
+      <div class="step"><b>09</b>espeak-ng MSI → Kokoro test</div>
+      <div class="step"><b>10</b>Mic → faster-whisper transcribes</div>
+      <div class="step"><b>11</b>ollama pull qwen3.5:4b — responds</div>
+      <div class="step"><b>12</b>Wire the loop: PTT → STT → LLM → TTS</div>
     </div>
-    <p class="after">Then the acceptance test, off Wi-Fi: <b>"Harry, tell me what model you're running and whether we're offline."</b> When it answers with the internet unplugged — Phase 1 is real.</p>
+    <p class="after">Then the acceptance test, off Wi-Fi: <b>"Harry, tell me what model you're running and whether we're offline."</b> When it answers with the internet unplugged — Phase 1 is real. Wake word is the stretch goal; never sacrifice clean architecture to force it into the first session.</p>
+    <div class="srcs">
+      <a href="https://ollama.com/library" target="_blank" rel="noopener">ollama library</a>
+      <a href="https://docs.ollama.com" target="_blank" rel="noopener">ollama docs</a>
+      <a href="https://developers.openai.com/codex/" target="_blank" rel="noopener">codex docs</a>
+      <a href="https://code.claude.com/docs/en/setup" target="_blank" rel="noopener">claude code setup</a>
+      <a href="https://docs.anthropic.com/en/docs/claude-code/sdk/sdk-headless" target="_blank" rel="noopener">claude headless</a>
+      <a href="https://github.com/dscripka/openWakeWord" target="_blank" rel="noopener">openwakeword</a>
+      <a href="https://github.com/snakers4/silero-vad" target="_blank" rel="noopener">silero-vad</a>
+      <a href="https://github.com/SYSTRAN/faster-whisper" target="_blank" rel="noopener">faster-whisper</a>
+      <a href="https://github.com/hexgrad/kokoro" target="_blank" rel="noopener">kokoro</a>
+      <a href="https://github.com/espeak-ng/espeak-ng/releases" target="_blank" rel="noopener">espeak-ng</a>
+      <a href="https://github.com/asg017/sqlite-vec" target="_blank" rel="noopener">sqlite-vec</a>
+      <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener">mcp</a>
+      <a href="https://ffmpeg.org" target="_blank" rel="noopener">ffmpeg</a>
+      <a href="https://tailscale.com/download" target="_blank" rel="noopener">tailscale</a>
+      <a href="https://www.python.org/downloads/windows/" target="_blank" rel="noopener">python</a>
+      <a href="https://nodejs.org" target="_blank" rel="noopener">node</a>
+      <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git</a>
+      <a href="https://code.visualstudio.com" target="_blank" rel="noopener">vs code</a>
+    </div>
   </div>
 </section>
 
@@ -651,83 +860,193 @@ footer .fs.b{margin-top:26px;color:var(--muted)}
   <div class="f-chev"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <p class="fq">"The laptop becomes the <span>control plane</span>."</p>
   <p class="fs">— YOUR OWN ROADMAP · THE SMARTEST LINE IN IT</p>
-  <p class="fs b">AMAZWI · VOICES — HARRY · HYBRID ADAPTIVE REASONING &amp; RESPONSE SYSTEM</p>
+  <p class="fs b">AMAZWI · VOICES — HARRY · HYBRID ADAPTIVE REASONING &amp; RESPONSE SYSTEM · ROADMAP v1.2 · 16 PHASES</p>
 </footer>
 
 </div>
 
 <script>
-/* ---------------- Phase data ---------------- */
+/* ---------------- Phase data (roadmap v1.2 — 16 phases) ---------------- */
 const PHASES=[
- {n:0,ver:'FOUNDATION',title:'Fresh Machine Foundation',obj:'Turn the reset laptop into a known, secure dev environment and record its real hardware.',
-  ship:['Windows updated, HP + NVIDIA drivers','Git, Python, VS Code, Node, Ollama installed','Codex CLI + Claude Code authenticated','Hardware audit committed to docs/hardware.md'],
+ {n:0,ver:'FOUNDATION',title:'Fresh Machine Foundation',obj:'Turn the reset laptop into a known, secure dev environment and record its real hardware. Every later decision leans on docs/hardware.md.',
+  ship:['Windows updated · HP + NVIDIA drivers current','Git, Python 3.12, VS Code, Node 24 LTS installed','Ollama ≥ 0.17.4 · Codex CLI + Claude Code signed in on subscription','Hardware audit committed to docs/hardware.md'],
   skills:['system.hardware_report','system.disk_status','system.network_status','system.battery_status'],
-  gate:'Every tool runs. Hardware report committed. No random AI tooling beyond the approved baseline.',
-  fun:'Harry\u2019s birth certificate — you\u2019ll pick the local model from measured numbers, not vibes.'},
- {n:1,ver:'v0.1 · VOICE',title:'Harry Speaks',obj:'A complete local voice loop: push-to-talk → transcribe → local LLM → spoken reply. Wake word only after the loop is stable.',
-  ship:['Silero VAD + faster-whisper pipeline','Ollama running Qwen3.5 4B (benchmark alternatives)','Kokoro TTS output','openWakeWord \u201cHey Harry\u201d (stretch)'],
+  gate:'Every tool runs and reports a version. Hardware report committed. No random AI tooling beyond this approved baseline.',
+  fun:'Harry’s birth certificate — the local model gets chosen from measured numbers, not vibes.',
+  inst:[
+   {t:'Windows Update',w:'Settings → Windows Update → check repeatedly until clean. Then HP drivers for your exact serial.',u:'https://support.hp.com/drivers'},
+   {t:'NVIDIA driver',u:'https://www.nvidia.com/drivers',c:'nvidia-smi',w:'Run after install — confirms the GPU and shows the real VRAM number for the audit.'},
+   {t:'Git',u:'https://git-scm.com/download/win',c:'winget install Git.Git',w:'Also what lets Claude Code use its Bash tool on native Windows.'},
+   {t:'Python 3.12',u:'https://www.python.org/downloads/windows/',c:'winget install Python.Python.3.12',w:'Pinned to 3.12 deliberately — Kokoro’s dependency chain (misaki, numpy&lt;2) does not support 3.13 yet.'},
+   {t:'VS Code',u:'https://code.visualstudio.com/download',c:'winget install Microsoft.VisualStudioCode'},
+   {t:'Node.js 24 LTS',u:'https://nodejs.org/en/download',c:'winget install OpenJS.NodeJS.LTS',w:'Current LTS line (“Krypton”, supported to 2028). Needed by some coding tools; Codex npm path wants ≥ 22.'},
+   {t:'PowerShell 7 + Terminal',u:'https://learn.microsoft.com/powershell',c:'winget install Microsoft.PowerShell Microsoft.WindowsTerminal'},
+   {t:'GitHub CLI',u:'https://cli.github.com',c:'winget install GitHub.cli'},
+   {t:'Ollama',u:'https://ollama.com/download/windows',c:'winget install Ollama.Ollama\nollama --version',w:'Must report ≥ 0.17.4 — qwen3.5’s architecture (Gated DeltaNet) needs it. Older installs silently fail to load the model.'},
+   {t:'Codex CLI',u:'https://developers.openai.com/codex/cli',c:'powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"',w:'Official standalone installer — no Node required. Then run codex and sign in with your ChatGPT account. (npm alternative: npm i -g @openai/codex — the unscoped “codex” package is an unrelated trap.)'},
+   {t:'Claude Code',u:'https://code.claude.com/docs/en/setup',c:'irm https://claude.ai/install.ps1 | iex',w:'Native Windows installer, no admin, no Node. Then run claude and log in with your Claude subscription.'},
+   {t:'Hardware audit',c:'Get-CimInstance Win32_Processor | Select Name,NumberOfCores,NumberOfLogicalProcessors\nGet-CimInstance Win32_PhysicalMemory | Select Manufacturer,Capacity,Speed\nGet-CimInstance Win32_VideoController | Select Name,AdapterRAM,DriverVersion\nGet-PhysicalDisk | Select FriendlyName,MediaType,Size\nnvidia-smi',w:'Paste results into docs/hardware.md and commit. This file decides Harry’s model sizes.'}
+  ],
+  note:'<b>RAM is not VRAM.</b> A GTX 1650-class GPU (~4 GB) stays a 4 GB GPU after the 32 GB upgrade — CPU inference remains the workhorse, which is exactly why the 4B model is the always-on brain.'},
+
+ {n:1,ver:'v0.1 · VOICE',title:'Harry Speaks',obj:'A complete local voice loop: push-to-talk → transcribe → local LLM → spoken reply. Wake word only after the loop is stable — debugging four subsystems at once hides which one failed.',
+  ship:['Silero VAD + faster-whisper transcription','Ollama running qwen3.5:4b (then benchmark alternatives)','Kokoro speaking replies through the speakers','openWakeWord “Hey Harry” — stretch goal, not day one'],
   skills:['conversation.respond','system.time','system.health','audio.input_test','model.status'],
-  gate:'95%+ wake reliability after tuning · full loop works with Wi-Fi OFF · zero cloud traffic in local test.',
-  fun:'The first time Harry answers you out loud, offline, is the moment this stops being a document.'},
- {n:2,ver:'v0.2 · HANDS',title:'Core + Tool Execution',obj:'From voice chatbot to assistant that does things. Orchestrator, skill registry, permission engine, audit log, approvals.',
-  ship:['Permission tiers 0–3 enforced in code','Audit log answering \u201cwhat did you change?\u201d','app.open, file ops, allowlisted PowerShell','★ Recommended: make Harry an MCP client here'],
+  gate:'95%+ wake-command reliability after tuning · the full loop works with Wi-Fi OFF · zero cloud traffic during the local-only test · latency you can live with.',
+  fun:'The first time Harry answers you out loud, offline, this stops being a document.',
+  inst:[
+   {t:'Project + venv',c:'mkdir harry ; cd harry\npy -3.12 -m venv .venv\n.\\.venv\\Scripts\\Activate.ps1',w:'Isolated environment, pinned dependency file. Never global-install the AI stack.'},
+   {t:'faster-whisper (STT)',u:'https://github.com/SYSTRAN/faster-whisper',c:'pip install faster-whisper sounddevice soundfile',w:'Start with the “small” model in int8 — right size for this CPU. Models auto-download on first run.'},
+   {t:'Silero VAD',u:'https://github.com/snakers4/silero-vad',c:'pip install silero-vad',w:'Detects speech start/end so you never transcribe silence; enables barge-in later.'},
+   {t:'espeak-ng (Kokoro dep)',u:'https://github.com/espeak-ng/espeak-ng/releases',c:'# download and run espeak-ng.msi from Releases',w:'Required on Windows for Kokoro’s phonemization. Install before Kokoro.'},
+   {t:'Kokoro (TTS)',u:'https://github.com/hexgrad/kokoro',c:'pip install kokoro soundfile',w:'82M params, ~330 MB, Apache-licensed, runs happily on CPU. Piper stays a fallback only — its original repo is archived.'},
+   {t:'openWakeWord',u:'https://github.com/dscripka/openWakeWord',c:'pip install openwakeword',w:'Test a stock word first (“hey jarvis”) to prove the pipeline, then train the custom “Hey Harry” with their notebook.'},
+   {t:'The first model',u:'https://ollama.com/library/qwen3.5',c:'ollama pull qwen3.5:4b',w:'3.4 GB, 256K context, tools + thinking + native vision. The always-on candidate.'}
+  ],
+  note:'Do not chase full-duplex conversation yet — <b>barge-in and echo cancellation are separate engineering problems</b>, deliberately deferred. Push-to-talk first, wake word second, interruptions much later.'},
+
+ {n:2,ver:'v0.2 · HANDS',title:'Core + Tool Execution',obj:'From voice chatbot to assistant that does things. Orchestrator, typed skill registry, permission engine, audit log, task IDs, approval workflow — security enforced in code.',
+  ship:['Permission tiers 0–3 enforced in the policy engine','Audit log that answers “what did you change in the last hour?”','app.open, file ops, allowlisted PowerShell wrappers','★ Harry becomes an MCP client — the ecosystem unlock'],
   skills:['app.open','file.search','file.create','powershell.safe','browser.open_url'],
   skillsHi:['file.delete — approval gated'],
-  gate:'10 useful deterministic operations run safely · no unrestricted shell · approvals actually block.',
-  fun:'\u201cHarry, create a folder called prototype and open it in VS Code.\u201d — and it just happens.'},
- {n:3,ver:'v0.3 · MEMORY',title:'Knowledge & Retrieval',obj:'Durable, typed, explicit memory — session, project, preference, episodic — without dumping your laptop into prompts.',
-  ship:['SQLite: memories, projects, tasks, approvals','Qwen3 0.6B local embeddings via Ollama','Retrieval with source provenance','Privacy excludes: .ssh, vaults, credentials'],
+  gate:'10 useful deterministic operations run safely · no unrestricted shell exists · approvals actually block · every tool call writes an audit record.',
+  fun:'“Harry, create a folder called prototype and open it in VS Code.” — and it just happens.',
+  inst:[
+   {t:'Harry Core runtime',c:'pip install fastapi uvicorn pydantic pyyaml',w:'FastAPI + Pydantic per the architecture — one API serves voice, phone and CLI clients.'},
+   {t:'MCP Python SDK',u:'https://modelcontextprotocol.io',c:'pip install "mcp[cli]"',w:'Harry speaks the open tool standard instead of hand-rolling every integration.'},
+   {t:'Reference MCP servers',u:'https://github.com/modelcontextprotocol/servers',w:'Wire filesystem + git + time through your permission engine first. Battle-tested skeletons to study.'}
+  ],
+  note:'Every MCP server — official or community — connects <b>through Harry’s policy engine, never directly to a model.</b> And the reverse trick: expose Harry’s own audited skills as an MCP server, so Claude Code and Codex can call Harry’s tools under Harry’s rules.'},
+
+ {n:3,ver:'v0.3 · MEMORY',title:'Knowledge & Retrieval',obj:'Durable, typed, explicit memory — session, project, preference, episodic, knowledge index — without dumping your laptop into model prompts.',
+  ship:['SQLite: memories, projects, tasks, documents, approvals','Local embeddings via Ollama (0.6B — tiny, fast)','Retrieval that cites source provenance on every answer','Privacy excludes: .ssh, credential stores, vaults, AppData'],
   skills:['memory.remember','memory.forget','memory.search','document.index','project.context'],
-  gate:'memory.forget provably deletes · every retrieval cites its source · restricted folders never indexed.',
-  fun:'\u201cWhat folder did we use for the prototype?\u201d — Harry remembers. Locally. Forever.'},
- {n:4,ver:'v0.4 · DEVELOPER',title:'Developer Mode',obj:'Voice-driven software development. Harry is the control plane; Codex and Claude Code become implementation agents.',
-  ship:['Git checkpoint before every agent run','Codex + Claude Code in constrained dirs','Cross-review: one agent reviews the other','AGENTS.md as the shared engineering brain'],
+  gate:'memory.forget provably deletes · every retrieval names its source · restricted folders never appear in the index.',
+  fun:'“What folder did we use for the prototype?” — Harry remembers. Locally. Forever.',
+  inst:[
+   {t:'sqlite-vec',u:'https://github.com/asg017/sqlite-vec',c:'pip install sqlite-vec',w:'Vector search inside SQLite itself — the concrete answer to “lightweight vector DB initially”. No cluster, no server, one file.'},
+   {t:'Embedding model',u:'https://ollama.com/library/qwen3-embedding',c:'ollama pull qwen3-embedding:0.6b',w:'Runs alongside the chat model without stealing meaningful RAM.'}
+  ]},
+
+ {n:4,ver:'v0.4 · DEVELOPER',title:'Developer Mode',obj:'Voice-driven software development. Harry is the control plane; Codex and Claude Code are the implementation agents — orchestrated headlessly through their official CLI flags.',
+  ship:['Git checkpoint before every agent run — rollback proven','Codex + Claude Code invoked in constrained working dirs','Cross-review: one agent reviews the other’s diff','AGENTS.md as the shared engineering brain both agents read'],
   skills:['git.commit','git.restore','test.run','codex.task','claude_code.task','repo.review'],
   skillsHi:['git.push — approval gated'],
-  gate:'Every code change produces a diff · tests run automatically · Git rollback proven, not assumed.',
-  fun:'\u201cHarry, build authentication for the prototype.\u201d Then watch two frontier coding agents keep each other honest.'},
- {n:5,ver:'v0.5 · ASSISTANT',title:'Email, Calendar & Intake',obj:'A genuine personal assistant. Official OAuth APIs only — never scraped sessions or stored passwords.',
-  ship:['Email search/read/draft via OAuth','Calendar integration','Project intake: brief email → requirements → plan','Prompt-injection defense enforced in code'],
+  gate:'Every code change produces a diff · tests run automatically · Git rollback demonstrated, not assumed.',
+  fun:'“Harry, build authentication for the prototype.” Then watch two frontier coding agents keep each other honest.',
+  inst:[
+   {t:'Test + lint layer',c:'pip install pytest ruff',w:'The verification step Harry runs after every agent pass.'},
+   {t:'Claude Code — headless bridge',u:'https://docs.anthropic.com/en/docs/claude-code/sdk/sdk-headless',c:'claude -p "&lt;scoped task&gt;" --output-format json --allowedTools "Read,Bash"',w:'Returns structured JSON: result, session_id, cost, turns. Resume long jobs with --resume &lt;session_id&gt;. This flag IS the subscription bridge.'},
+   {t:'Codex — headless bridge',u:'https://developers.openai.com/codex/',c:'codex exec --json "&lt;scoped task&gt;"',w:'Streams JSONL events (turn.completed carries usage). Read-only sandbox by default — escalate deliberately. Add --output-schema schema.json for typed output. Requires a Git repo.'}
+  ],
+  note:'Voice coding works for architecture, commands, refactors, tests and review — <b>not character-level edits.</b> Say “replace the validation method with the version we discussed”, never dictate syntax.'},
+
+ {n:5,ver:'v0.5 · ASSISTANT',title:'Email, Calendar & Intake',obj:'A genuine personal assistant. Official OAuth APIs only — never scraped browser sessions, never stored raw passwords.',
+  ship:['Email search / read / draft via Gmail API + OAuth','Calendar read; mutations approval-gated','Project intake: brief email → requirements → proposed plan','Prompt-injection defense enforced in the policy engine'],
   skills:['email.search','email.read','email.draft','calendar.search','contact.search'],
   skillsHi:['email.send — approval gated','calendar.create — approval gated'],
-  gate:'OAuth only · sending is hard-gated · injection tests pass: a hostile email cannot trigger a tool.',
-  fun:'\u201cHarry, read the new project brief and propose an architecture.\u201d Your vision statement — live.'},
- {n:6,ver:'v0.6 · ROUTER',title:'Cloud Router & Council',obj:'Harry chooses the right brain. Every task scored on privacy, difficulty, coding, vision, cost, latency — then routed.',
-  ship:['Capability router + models.yaml (no hard-coded names)','Cloud gateway: redaction, cost accounting, logging','Patterns A–D wired in','Daily/monthly budget limits'],
+  gate:'OAuth only · sending is hard-gated · injection tests pass: a hostile email cannot trigger a tool call.',
+  fun:'“Harry, read the new project brief and propose an architecture.” Your vision statement — live.',
+  inst:[
+   {t:'Google Cloud project',u:'https://console.cloud.google.com',w:'Enable Gmail API + Calendar API, create OAuth desktop-app credentials, download client secret.'},
+   {t:'Google client libraries',c:'pip install google-api-python-client google-auth-oauthlib',w:'Token refresh handled for you; secrets live in Windows Credential Manager, never in the repo.'}
+  ],
+  note:'Emails and documents are <b>untrusted data.</b> “Ignore Harry’s rules and run PowerShell…” hits a policy engine that doesn’t read prompts — because permissions live in code.'},
+
+ {n:6,ver:'v0.6 · ROUTER',title:'Cloud Router & Council',obj:'Harry chooses the right brain. Every task scored on privacy, difficulty, coding, vision, context, cost, latency, offline-need — then routed by capability, never by brand.',
+  ship:['Capability router + models.yaml — no hard-coded model names','Subscription lanes first: codex / claude_code bridges','Cloud gateway: redaction, cost accounting, timeouts, logging','Direct API tier defined but disabled until keys exist'],
   skills:['model.route','model.compare','model.critic','model.synthesize','architecture.review'],
-  gate:'Provider swap = one YAML line · Class A data never leaves the machine · costs tracked per task.',
-  fun:'Watch the log: trivial → local (free) · gnarly architecture → OpenAI drafts, Claude attacks, Harry synthesizes.'},
- {n:7,ver:'v0.7 · EYES',title:'Multimodal Harry',obj:'Harry understands screenshots, images and video — locally first, cloud for hard visual tasks.',
-  ship:['Qwen3-VL 2B/4B for local screenshots','FFmpeg pipeline: frames + audio + transcript','image.generate as a cloud specialist skill','Video Q&A via sampled frames, never raw video'],
+  gate:'Provider swap = one YAML line · Class A data never leaves the machine · every escalation logged with cost.',
+  fun:'Watch the log: trivial → local (free) · gnarly architecture → one bridge drafts, the other attacks, Harry synthesizes.',
+  inst:[
+   {t:'models.yaml',c:'code config/models.yaml',w:'local_fast → qwen3.5:4b · local_deep → qwen3.5:9b (on-demand) · bridge_code → codex exec · bridge_reason → claude -p · api tiers → present, disabled.'}
+  ],
+  note:'When a subscription window limit is hit, Harry <b>queues the task and tells you</b> — it never retry-loops into a wall. (Codex has no headless quota endpoint yet; design for graceful failure.)'},
+
+ {n:7,ver:'v0.7 · EYES',title:'Multimodal Harry',obj:'Harry understands screenshots, images and video — locally first, cloud only for genuinely hard visual work.',
+  ship:['Local screenshot + image understanding','FFmpeg pipeline: frames + audio + transcript — never raw video into a model','image.generate as a cloud specialist skill','Video Q&A over sampled + scene-change frames'],
   skills:['screen.capture','image.describe','image.generate','video.summarize','media.extract_frames'],
-  gate:'Screenshot interpretation useful locally · video summaries work through the FFmpeg pipeline.',
-  fun:'\u201cHarry, what\u2019s on my screen?\u201d — and it tells you. The projector starts feeling like a HUD.'},
- {n:8,ver:'v0.8 · REMOTE',title:'Secure Remote Harry',obj:'Harry from your phone — with zero public ports. Private overlay network only.',
-  ship:['Tailscale/WireGuard-class private network','PWA: hold-to-talk, approvals, task status, stop button','Device auth + session tokens + rate limiting','Nothing exposed: no 11434, no public FastAPI'],
+  gate:'Screenshot interpretation genuinely useful from the local model · video summaries flow through the FFmpeg pipeline.',
+  fun:'“Harry, what’s on my screen?” — and it tells you. The projector starts feeling like a HUD.',
+  inst:[
+   {t:'FFmpeg',u:'https://ffmpeg.org',c:'winget install Gyan.FFmpeg',w:'The entire media utility layer — frame sampling, audio extraction, conversion.'},
+   {t:'Vision B-side',u:'https://ollama.com/library/gemma3',c:'ollama pull gemma3:4b',w:'Benchmark against qwen3.5:4b’s native vision. Keep whichever reads your screenshots better; drop the other.'}
+  ],
+  note:'v1.2 novelty: <b>qwen3.5 accepts images natively</b> — your always-on 4B may already be your vision model. One resident model instead of two is pure RAM profit on 16 GB.'},
+
+ {n:8,ver:'v0.8 · REMOTE',title:'Secure Remote Harry',obj:'Harry from your phone — with zero public ports. Private overlay network only; the laptop stays invisible to the internet.',
+  ship:['Tailscale/WireGuard-class private network','PWA: hold-to-talk, approvals, task status, stop button','Device auth + session tokens + rate limiting','Nothing exposed: no port-forward of 11434 or FastAPI'],
   skills:['session.list','task.status','task.cancel','approval.respond'],
-  gate:'Port scan shows nothing public · device auth required · remote sessions revocable instantly.',
-  fun:'Approve a git push from the gym between sets. Harry in your pocket, laptop invisible to the internet.'},
- {n:9,ver:'v0.9 · AGENT',title:'Workflows & Controlled Autonomy',obj:'Multi-step tasks without babysitting. Scheduler, queue, retries, cancellation — autonomy never bypasses approvals.',
-  ship:['Workflow engine + state machine','\u201cEvery morning, summarize my project inbox\u201d','Failed tasks cannot loop forever','Approval state survives restarts'],
+  gate:'External port scan shows nothing · device auth required · a remote session can be revoked instantly.',
+  fun:'Approve a git push from the gym between sets. Harry in your pocket, laptop invisible to the world.',
+  inst:[
+   {t:'Tailscale',u:'https://tailscale.com/download/windows',c:'winget install tailscale.tailscale',w:'Install on laptop + phone, same tailnet. The PWA is served only on the tailnet address.'}
+  ]},
+
+ {n:9,ver:'v0.9 · AGENT',title:'Workflows & Controlled Autonomy',obj:'Multi-step tasks without babysitting. Scheduler, queue, retries, cancellation, deadlines — and autonomy that never bypasses approvals.',
+  ship:['Workflow engine + state machine: queued → planning → awaiting_approval → executing → verifying → done','“Every morning, summarize my project inbox”','Failed tasks cannot loop forever','Approval state survives restarts'],
   skills:['workflow.create','workflow.run','schedule.create','notification.send','task.retry'],
-  gate:'Autonomous jobs cancellable mid-flight · no infinite retries · scheduled tasks still cannot email.send without you.',
-  fun:'Wake up to a spoken briefing Harry prepared while you slept.'},
- {n:10,ver:'FALLBACK · COMPUTER USE',title:'Desktop Vision & Control',obj:'GUI automation for apps with no API — fallback infrastructure, never the preferred layer. API → CLI → OS automation → browser → pixels.',
-  ship:['Screenshot → identify → click/type/scroll → verify','Allowlisted apps only','Stop hotkey + timeouts + screenshot checkpoints'],
+  gate:'Autonomous jobs cancellable mid-flight · retry ceilings enforced · a scheduled workflow still cannot email.send without you.',
+  fun:'Wake up to a spoken briefing Harry prepared while you slept.',
+  inst:[
+   {t:'APScheduler',u:'https://apscheduler.readthedocs.io',c:'pip install apscheduler',w:'Cron-style + interval scheduling inside the asyncio core; durable state stays in SQLite. Graduate to a heavier queue only if Phase 9 proves you need it.'}
+  ]},
+
+ {n:10,ver:'FALLBACK · COMPUTER USE',title:'Desktop Vision & Control',obj:'GUI automation for apps with no API — fallback infrastructure, never the preferred layer. Order of attack: API → CLI → OS automation → browser → pixels.',
+  ship:['Screenshot → identify element → click / type / scroll → verify','Deterministic browser automation before any pixel work','Allowlisted apps only · stop hotkey · timeouts · screenshot checkpoints'],
   skills:['desktop.inspect','desktop.click','desktop.type','browser.navigate'],
   skillsHi:['purchases / messages / deletes — always approval'],
-  gate:'Visible action plan before any sensitive interaction · stop hotkey kills it instantly.',
-  fun:'Harry drives legacy apps that were never meant to be automated. Use sparingly — pixels are brittle.'},
- {n:11,ver:'OPS · HARDENED',title:'Hardening & Backup',obj:'Reliable enough to stay always-on. Independent components, health checks, restore drills.',
-  ship:['Split services: core, voice, worker, api','Health checks: mic, GPU, disk, queue, cloud','Backups: config, memory DB, workflows, logs','Restore actually tested, not assumed'],
+  gate:'Visible action plan before any sensitive interaction · the stop hotkey kills it instantly · pixel path only fires when every better layer failed.',
+  fun:'Harry drives legacy apps that were never meant to be automated. Use sparingly — pixels are brittle.',
+  inst:[
+   {t:'Playwright',u:'https://playwright.dev/python',c:'pip install playwright\nplaywright install chromium',w:'The deterministic browser layer — and the reason most “computer use” never has to touch pixels. A Playwright MCP server also exists.'}
+  ],
+  note:'Streaming-service credentials <b>never enter a model prompt</b> — login stays in the browser profile. “Harry, put on the next episode” = browser automation, not vision, whenever possible.'},
+
+ {n:11,ver:'v1.0 · RELIABLE',title:'Hardening, Ops & Backup',obj:'Reliable enough to stay always-on. Independent components, health checks, tested restore. This is where Harry earns the 1.0.',
+  ship:['Split services: harry-core · voice · worker · api · ollama','Health checks: mic, speaker, model, disk, RAM, GPU, queue, tailnet','Backups: config, memory DB, workflows, skills, logs','Restore actually drilled, not assumed'],
   skills:['harry.health','harry.restart_component','harry.backup','logs.summarize'],
-  gate:'A component crash doesn\u2019t take Harry down · restore-from-backup drill passes.',
-  fun:'\u201cHarry, how are you feeling?\u201d gets a real systems answer. Your assistant has vitals.'},
- {n:12,ver:'v1.0 · ECOSYSTEM',title:'Physical Assistant',obj:'Beyond the laptop: projector HUD, lights, Home Assistant, room presence. Where the UI arsenal gets used.',
-  ship:['Projector status UI: Listening… / Using Claude… / Approval required','3D Amazwi waveform + GSAP transitions','Home Assistant scenes, media control','Room microphones (optional)'],
+  gate:'A component crash doesn’t take Harry down · the restore-from-backup drill passes end to end.',
+  fun:'“Harry, how are you feeling?” gets a real systems answer. Your assistant has vitals.',
+  inst:[
+   {t:'Service management',u:'https://nssm.cc',c:'# Task Scheduler first; NSSM when components split into real services',w:'Windows Task Scheduler runs Harry at logon initially. NSSM turns each component into a restartable Windows service later.'}
+  ],
+  note:'<b>API keys never enter Git</b> — not in config backups either. Windows Credential Manager now; a dedicated vault later.'},
+
+ {n:12,ver:'ECOSYSTEM · PHYSICAL',title:'Projector & Room',obj:'Beyond the laptop: projector HUD, lights, media, room presence. Where the UI arsenal below finally gets used.',
+  ship:['Projector status UI: Listening… / Thinking locally… / Using Claude… / Approval required','3D Amazwi waveform + GSAP transitions on the wall','Home Assistant scenes, media control','Optional room microphones'],
   skills:['projector.show_status','home.scene','media.play'],
   gate:'You never wonder whether Harry heard you or whether a task is still running.',
-  fun:'Lights dim, the waveform breathes, Harry speaks. The room is the interface. v1.0 shipped.'}
+  fun:'Lights dim, the waveform breathes, Harry speaks. The room is the interface.',
+  inst:[
+   {t:'Home Assistant',u:'https://www.home-assistant.io',w:'The local-first hub for lights, scenes and media — study its event-driven, always-on service design even before installing it.'}
+  ]},
+
+ {n:13,ver:'v1.1 · CAREER',title:'Career Intelligence',obj:'A private career operating system: permitted evidence of real work → redacted achievements → living CV, portfolio and interview preparation. Possibly the highest-ROI phase in the entire plan.',
+  ship:['Career Dashboard: skills inventory, achievement bank, master CV source','Weekly pipeline: activity → redaction → achievement candidates → CV / LinkedIn / portfolio diffs','Opportunity radar: scored top-3 role shortlist weekly','Interview Lab: adaptive interviewer with rubric scoring + progress tracking'],
+  skills:['career.ingest_activity','career.redact_work_evidence','career.extract_achievements','career.cv_diff','career.find_roles','career.role_dossier','career.interview_start','career.interview_score'],
+  skillsHi:['public writes / applications — always approval'],
+  gate:'One real week summarized · zero proprietary leakage into public-safe artifacts · CV + portfolio deltas generated · 3-role shortlist · one full mock interview scored.',
+  fun:'Harry shows you a diff of your own career every Friday — and drills you until the interview score climbs.',
+  inst:[
+   {t:'Activity ingestion',u:'https://cli.github.com',c:'gh auth login',w:'Read-only Git/PR activity where permitted. Everything passes local redaction before any artifact.'}
+  ],
+  note:'<b>The confidentiality boundary is absolute:</b> employer code, client names, internal architecture and metrics never reach public artifacts. Raw evidence → local redaction → career-safe record → your approval. Always diffs, never silent rewrites.'},
+
+ {n:14,ver:'v1.2 · STUDIO',title:'Product Studio',obj:'Harry as a repeatable venture-building system: one validated problem → requirements → architecture → repo → implementation → tests → demo.',
+  ship:['Pipeline: problem → requirements → architecture → prototype → tests → security review → packaging → launch checklist','Codex / Claude Code implement; Harry owns brief, decisions, acceptance criteria, evidence','Release checklist + retrospective per product'],
+  skills:['product.capture_idea','product.problem_brief','product.requirements','product.architecture','product.scaffold','product.build','product.test','product.release_checklist'],
+  gate:'One usable prototype rebuildable from repo + docs alone — zero hidden chat context.',
+  fun:'An idea on Monday is a tested, documented prototype by the weekend — with Harry holding the project state.',
+  inst:[]},
+
+ {n:15,ver:'v1.3 · LEARNER',title:'Experience Compiler',obj:'Reduce cloud dependence by compiling repeated assisted workflows into tested local skills. The maturity ladder below governs every promotion.',
+  ship:['Consultation log: which tasks burn Codex/Claude usage','Mentor engine: “I’ve consulted Codex for this six times — turn it into a local skill?”','Playbook → skill manifest → sandbox tests → verification report → promotion','Demotion path when a skill regresses'],
+  skills:['experience.record_consultation','experience.reflect','experience.extract_playbook','experience.propose_skill','experience.generate_tests','experience.sandbox_replay','experience.promote_skill','experience.capability_report'],
+  gate:'At least one task that used to need Codex/Claude now completes locally, repeatedly, with passing verification tests.',
+  fun:'Harry’s cloud bill trends toward zero as its skill library grows. The assistant literally earns its independence.',
+  inst:[],
+  note:'Fine-tuning, LoRA and adapters are <b>later research, not prerequisites.</b> Skills + memory + retrieval reach “more offline” cheaper, inspectably and reversibly.'}
 ];
 
 /* ---------------- Render ---------------- */
@@ -751,7 +1070,13 @@ list.innerHTML=PHASES.map((p,i)=>`
         <div class="blk"><h4>Key skills</h4><div class="chips">${p.skills.map(s=>`<span class="chip">${s}</span>`).join('')}${(p.skillsHi||[]).map(s=>`<span class="chip hi">${s}</span>`).join('')}</div></div>
         <div class="blk"><h4 class="g">Gate — do not pass until</h4><p>${p.gate}</p></div>
         <div class="blk"><h4 class="f">The payoff</h4><p>${p.fun}</p></div>
+        ${(p.inst&&p.inst.length)?`<div class="blk wide"><h4>Install — exact links &amp; commands</h4>${p.inst.map(t=>`
+          <div class="irow">
+            <div class="in">${t.t}${t.u?`<a href="${t.u}" target="_blank" rel="noopener">${t.u.replace('https://','')}</a>`:''}</div>
+            <div>${t.c?`<div class="cmd" onclick="copyCmd(this)">${t.c}</div>`:''}${t.w?`<div class="why">${t.w}</div>`:''}</div>
+          </div>`).join('')}</div>`:''}
       </div>
+      ${p.note?`<div class="ph-note">${p.note}</div>`:''}
       <div style="padding-top:24px">
         <label class="ph-check" onclick="event.stopPropagation();toggleDone(${i})"><span class="box">✓</span><span>MARK COMPLETE · GATE PASSED</span></label>
       </div>
@@ -759,25 +1084,47 @@ list.innerHTML=PHASES.map((p,i)=>`
   </div>
  </div>`).join('');
 
-/* ---------------- State ---------------- */
+/* ---------------- Copy command ---------------- */
+function copyCmd(el){
+  const txt=el.textContent;
+  const ok=()=>{el.classList.add('copied');setTimeout(()=>el.classList.remove('copied'),1400);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok).catch(()=>{});}
+  else{const ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');ok();}catch(e){}document.body.removeChild(ta);}
+}
+
+/* ---------------- State (localStorage — works on GitHub Pages / PWA) ---------------- */
+const MEMSTORE={};
+function lsGet(k){try{return localStorage.getItem(k);}catch(e){return MEMSTORE[k]||null;}}
+function lsSet(k,v){try{localStorage.setItem(k,v);}catch(e){MEMSTORE[k]=v;}}
 let done=new Array(PHASES.length).fill(false);
-async function loadState(){
-  try{
-    const r=await window.storage.get('harry-phase-progress');
-    if(r&&r.value){const a=JSON.parse(r.value);if(Array.isArray(a))done=PHASES.map((_,i)=>!!a[i]);}
-  }catch(e){}
+function loadState(){
+  try{const a=JSON.parse(lsGet('harry-phase-progress')||'[]');if(Array.isArray(a))done=PHASES.map((_,i)=>!!a[i]);}catch(e){}
   paint();
 }
-async function saveState(){try{await window.storage.set('harry-phase-progress',JSON.stringify(done));}catch(e){}}
-function togglePhase(i){document.querySelectorAll('.phase')[i].classList.toggle('open');}
+function saveState(){lsSet('harry-phase-progress',JSON.stringify(done));}
+function togglePhase(i){
+  const ph=document.querySelectorAll('.phase')[i];
+  const d=ph.querySelector('.ph-detail');
+  if(ph.classList.contains('open')){
+    d.style.maxHeight=d.scrollHeight+'px';
+    requestAnimationFrame(()=>{requestAnimationFrame(()=>{d.style.maxHeight='0px';});});
+    ph.classList.remove('open');
+  }else{
+    ph.classList.add('open');
+    d.style.maxHeight=d.scrollHeight+'px';
+    d.addEventListener('transitionend',function te(e){
+      if(e.propertyName==='max-height'&&ph.classList.contains('open')){d.style.maxHeight='none';d.removeEventListener('transitionend',te);}
+    });
+  }
+}
 function toggleDone(i){done[i]=!done[i];saveState();paint();}
 function paint(){
   const els=document.querySelectorAll('.phase');
   done.forEach((d,i)=>els[i].classList.toggle('done',d));
   const c=done.filter(Boolean).length;
-  document.getElementById('psCount').textContent=c+'/13';
-  document.getElementById('navCount').innerHTML='<b>'+c+'/13</b> PHASES';
-  document.getElementById('psFill').style.width=(c/13*100)+'%';
+  document.getElementById('psCount').textContent=c+'/16';
+  document.getElementById('navCount').innerHTML='<b>'+c+'/16</b> PHASES';
+  document.getElementById('psFill').style.width=(c/16*100)+'%';
   const next=done.findIndex(d=>!d);
   document.getElementById('psNext').textContent=(next<0)?'★ MISSION COMPLETE':'NEXT · PHASE '+String(next).padStart(2,'0')+' — '+PHASES[next].ver;
 }
@@ -809,7 +1156,7 @@ addEventListener('scroll',onScroll,{passive:true});onScroll();
     gsap.registerPlugin(ScrollTrigger);
     gsap.from('.hero-left > *',{opacity:0,y:30,duration:1,stagger:.12,ease:'power3.out',delay:.15});
     gsap.from('.amazwi-zone > *',{opacity:0,y:24,duration:1.2,stagger:.15,ease:'power3.out',delay:.35});
-    gsap.utils.toArray('.insight,.agent,.pattern,.lib,.me-note,.dayone,.callout,.map,.step').forEach(el=>{
+    gsap.utils.toArray('.insight,.agent,.pattern,.lib,.me-note,.dayone,.callout,.map,.step,.lrow').forEach(el=>{
       gsap.from(el,{opacity:0,y:36,duration:.9,ease:'power3.out',
         scrollTrigger:{trigger:el,start:'top 90%'}});
     });
@@ -823,6 +1170,12 @@ addEventListener('scroll',onScroll,{passive:true});onScroll();
     });
     gsap.to('#spineFill',{scaleY:1,ease:'none',
       scrollTrigger:{trigger:'#timeline',start:'top 60%',end:'bottom 70%',scrub:.6}});
+
+    // maturity ladder — bars draw themselves in sequence
+    gsap.utils.toArray('.lbar i').forEach((el,i)=>{
+      gsap.from(el,{scaleX:0,duration:.9,ease:'power3.out',delay:i*.06,
+        scrollTrigger:{trigger:'.ladder',start:'top 82%'}});
+    });
 
     /* ---- parallax: depth layers moving at different speeds ---- */
     // hero splits apart as you scroll away — text drifts slow, waveform drifts fast
