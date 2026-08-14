@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HARRY — Hybrid Adaptive Reasoning &amp; Response sYstem</title>
 <meta name="theme-color" content="#050805">
 <meta name="mobile-web-app-capable" content="yes">
@@ -361,82 +361,6 @@ footer .fs.b{margin-top:26px;color:var(--muted)}
 .srcs a:hover{border-color:var(--stroke-brt);color:var(--lime)}
 .vtag{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:.24em;color:#0B1404;background:var(--lime);border-radius:100px;padding:4px 12px;margin-left:14px;vertical-align:middle;box-shadow:0 0 18px rgba(185,255,60,.45)}
 
-/* ---------- responsive · fit every screen ---------- */
-html{-webkit-text-size-adjust:100%}
-img,svg,canvas{max-width:100%}
-.eyebrow,.h-eyebrow{flex-wrap:wrap}
-
-/* grid/flex children default to min-width:auto, so the pre-formatted
-   .cmd / .pt-flow scrollers size their track to full unwrapped text and
-   blow the page out sideways. Let the tracks shrink; the code blocks
-   keep their own internal scrollbar. */
-.ph-grid>*,.irow,.irow>*,.pattern>*,.lib>*,.lrow>*,.insight>*,
-.agents>*,.steps>*,.blk,.pt-body,.in-body,.ph-card,.ph-top{min-width:0}
-.cmd,.pt-flow{max-width:100%}
-
-/* anchor targets must clear the fixed nav instead of landing under it */
-section,.phase{scroll-margin-top:96px}
-
-/* notch + home-indicator safe areas (standalone PWA, viewport-fit=cover) */
-nav{padding-top:calc(18px + env(safe-area-inset-top));
-  padding-left:calc(28px + env(safe-area-inset-left));
-  padding-right:calc(28px + env(safe-area-inset-right))}
-.wrap,.ps-inner{padding-left:calc(28px + env(safe-area-inset-left));
-  padding-right:calc(28px + env(safe-area-inset-right))}
-footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
-
-@media(max-width:900px){section{padding:110px 0 26px}}
-
-@media(max-width:700px){
-  .wrap,.ps-inner{padding-left:calc(22px + env(safe-area-inset-left));
-    padding-right:calc(22px + env(safe-area-inset-right))}
-  nav{padding:calc(14px + env(safe-area-inset-top)) calc(22px + env(safe-area-inset-right)) 14px calc(22px + env(safe-area-inset-left))}
-  .hero{padding:110px 0 60px}
-  section,.phase{scroll-margin-top:78px}
-  .timeline{padding-top:56px}
-  .phase{padding:0 0 22px 52px}
-  .ph-card{padding:26px 24px}
-  .callout{padding:26px 24px;margin-top:38px}
-}
-
-@media(max-width:480px){
-  section{padding:88px 0 22px}
-  .wrap,.ps-inner{padding-left:calc(16px + env(safe-area-inset-left));
-    padding-right:calc(16px + env(safe-area-inset-right))}
-  nav{padding:calc(12px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) 12px calc(16px + env(safe-area-inset-left))}
-  .nv-brand{font-size:12.5px;letter-spacing:.2em}
-  .nv-right{gap:10px;font-size:10px;letter-spacing:.1em}
-  .nv-ring{width:28px;height:28px}
-  .lede{font-size:16px;margin-bottom:44px}
-  .timeline{padding-top:44px}
-  .phase{padding:0 0 20px 42px}
-  .ph-card{padding:22px 18px}
-  .ph-top{gap:12px}
-  .ph-toggle{width:34px;height:34px;font-size:16px}
-  .ph-ghost{font-size:clamp(56px,17vw,86px)}
-  .mnode{white-space:normal;text-align:center;font-size:11px;padding:10px 15px}
-  .mnode.core{font-size:12px;padding:13px 20px}
-  .agents,.steps{grid-template-columns:1fr}
-  .me-note,.dayone{padding:26px 20px}
-  .callout{padding:22px 18px}
-  .lib{padding:24px 2px}
-  .lib:hover{padding-left:8px}
-  footer{padding:70px 0 calc(80px + env(safe-area-inset-bottom))}
-}
-
-@media(max-width:360px){
-  #navCount{display:none}
-  .hero-meta{gap:8px 18px}
-}
-
-/* phones held sideways */
-@media(max-height:540px) and (orientation:landscape){
-  .hero{min-height:0;padding:104px 0 48px}
-  .amazwi{height:clamp(96px,20vh,150px)}
-  .amazwi-zone{min-height:0}
-  section{padding:84px 0 20px}
-}
-
 </style>
 </head>
 <body>
@@ -462,7 +386,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero-left">
-    <div class="h-eyebrow">AMAZWI — PERSONAL AI OPERATING LAYER<span class="vtag">ROADMAP v1.3</span></div>
+    <div class="h-eyebrow">AMAZWI — PERSONAL AI OPERATING LAYER<span class="vtag">ROADMAP v1.4</span></div>
     <h1>HARRY</h1>
     <div class="h-acr"><b>H</b>ybrid <b>A</b>daptive <b>R</b>easoning &amp; <b>R</b>esponse s<b>Y</b>stem</div>
     <p class="hero-tag">Not a chatbot. A <em>control plane</em> above Windows that commands local models, Claude, OpenAI, your files, your code and your voice — reversible, auditable, and entirely yours.</p>
@@ -502,7 +426,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
   <div class="pbar deep" data-speed="0.25" style="width:170px;height:64vh;top:30%;left:-90px"></div>
   <div class="eyebrow"><span class="n">01</span> ANALYSIS</div>
   <h2>What you're actually building <span class="dim">— the read.</span></h2>
-  <p class="lede">All 3,683 lines of v1.3 reviewed — every model tag, installer and CLI flag verified against live sources, and the new human layer read line by line. The architecture is sound and achievable on 16 GB today. Seven decisions carry the whole project — protect them.</p>
+  <p class="lede">All 4,773 lines of v1.4 reviewed — every model tag, installer, CLI flag and provider-behaviour claim verified against live sources. The architecture is sound, achievable on 16 GB, and now executable: hand it to the agents and the repo governs itself. Eight decisions carry the whole project — protect them.</p>
 
   <div class="callout" style="margin-top:0;margin-bottom:44px">
     <div class="k">The North Star — new in v1.3</div>
@@ -566,6 +490,13 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
       <p>v1.3's contribution. Harry opens with a <b>first-run conversation</b>, keeps personality as editable config, and <b>asks before remembering</b>. On the power side, approvals can become scoped grants — but an always-confirm list (money, credentials, deploys) never auto-approves, elevation is temporary, and one stop command halts everything. A personality with a permission slip.</p>
     </div>
   </div>
+  <div class="insight">
+    <div class="in-num">08</div>
+    <div class="in-body">
+      <h3>The repo outlives the chats</h3>
+      <p>v1.4's law. Project memory lives in <b>repo-owned files</b> — CURRENT_STATE, PROJECT_MEMORY, HANDOFF, REVIEW_LOG — never in any provider's chat history. The recovery requirement makes it an invariant: delete every Codex conversation, every Claude conversation, even swap the primary model, and <b>a competent new agent resumes the project accurately</b> from the repository alone.</p>
+    </div>
+  </div>
 </section>
 
 <!-- ============ SYSTEM MAP ============ -->
@@ -601,7 +532,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
 <section id="phases" style="padding-bottom:0">
   <div class="eyebrow"><span class="n">03</span> MISSION TIMELINE</div>
   <h2>Sixteen phases. <span class="dim">Each ships something you can use.</span></h2>
-  <p class="lede" style="margin-bottom:0">Tap a phase to open its briefing — now with <b>every install, exact link and command</b> inside. Tap a command to copy it. Mark a phase complete when its gate passes — <b>progress saves on this device.</b> New in v1.3: first-run onboarding, the personality engine and the Windows Authority Model — on top of v1.2’s Career Intelligence, Product Studio and Experience Compiler.</p>
+  <p class="lede" style="margin-bottom:0">Tap a phase to open its briefing — now with <b>every install, exact link and command</b> inside. Tap a command to copy it. Mark a phase complete when its gate passes — <b>progress saves on this device.</b> New in v1.4: the Bootstrap Contract — Codex builds, Claude reviews, you decide — with mandatory Phase 0A and repo-owned agent memory. Still in from v1.3: onboarding, personality, authority.</p>
 </section>
 </div>
 
@@ -697,16 +628,129 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
   <div class="me-note">
     <h3>Where <span>I</span> fit — right now, and inside Harry</h3>
     <p><b>Today, in this chat:</b> your architecture sparring partner. Bring me phase plans to attack, skill manifests to draft, code to review, UI to design — like this console. When a gate fails, bring me the logs.</p>
-    <p><b>Phase 0–4, as Claude Code:</b> I live in your terminal on your subscription — already paid for. I read <code>AGENTS.md</code> and implement inside the repo under Harry's permission rules. Codex and I share the same repo docs, so we stay consistent without ever talking to each other.</p>
+    <p><b>Phase 0–4, as Claude Code:</b> I live in your terminal on your subscription — already paid for. <code>CLAUDE.md</code> routes me to <code>AGENTS.md</code>, the canonical contract, and my default role is <b>independent reviewer</b>: I inspect what Codex built, log findings by severity, and flag anything the evidence doesn't prove. Codex and I never talk to each other — the repo is our only shared brain.</p>
     <p><b>Phase 6+, as a bridge:</b> Harry shells out to <code>claude -p … --output-format json</code> as the deep-reasoning and critique lane — still on subscription. The direct API stays defined in <code>models.yaml</code> but disabled until you choose to fund it. If a better model exists someday, Harry swaps me out in one line. That's how it should be.</p>
     <p><b>The continuity trick:</b> ChatGPT and I never share memory — <b>the repo is our shared brain.</b> <code>README.md</code>, <code>AGENTS.md</code>, <code>docs/decisions/</code>. Keep those honest and both councils stay in sync forever.</p>
+  </div>
+</section>
+
+<!-- ============ BOOTSTRAP CONTRACT ============ -->
+<section id="contract">
+  <div class="pbar" data-speed="0.5" style="width:110px;height:52vh;top:8%;right:-50px"></div>
+  <div class="pbar deep" data-speed="0.3" style="width:170px;height:60vh;top:30%;left:-90px"></div>
+  <div class="eyebrow"><span class="n">05</span> THE BOOTSTRAP CONTRACT</div>
+  <h2>Codex builds. Claude reviews. <span class="dim">You decide.</span></h2>
+  <p class="lede">v1.4 turns the roadmap into an <b>executable specification.</b> Drop it at the root of an empty repo, paste one prompt, and the project builds its own governance before a single line of Harry exists — with agent behaviour verified against current provider docs, not assumed.</p>
+
+  <div class="pt-flow" style="margin-bottom:44px">Codex implements → tests + Git diff → Claude Code reviews → REVIEW_LOG (BLOCKER → NOTE) → you decide → approved fixes → phase gate</div>
+
+  <div class="agents">
+    <div class="agent ag-harry">
+      <div class="role">Final authority</div><h3>You — product owner</h3>
+      <ul><li>Start every phase; accept every gate</li><li>Approve anything dangerous, paid or public</li><li>Own all secrets and account auth</li><li>Choose which review findings get fixed</li></ul>
+    </div>
+    <div class="agent ag-openai">
+      <div class="role">Primary builder</div><h3>Codex</h3>
+      <ul><li>Reads roadmap → AGENTS.md → shared state, then states a plan</li><li>Implements only the approved phase — never jumps ahead</li><li>Tests, updates shared memory, summarizes the diff</li><li>Stops at the gate. Every time.</li></ul>
+    </div>
+    <div class="agent ag-claude">
+      <div class="role">Independent reviewer · me</div><h3>Claude Code</h3>
+      <ul><li>CLAUDE.md routes me to AGENTS.md — the canonical contract</li><li>Inspects actual files, tests and Git diff</li><li>Findings → REVIEW_LOG with severity, no stylistic rewrites</li><li>Flags anything Codex claimed but the evidence doesn't prove</li></ul>
+    </div>
+  </div>
+
+  <div class="pattern">
+    <div class="pt-key"><span class="pn">0A</span>MANDATORY BOOTSTRAP</div>
+    <div class="pt-body">
+      <h3>The repo is born governed</h3>
+      <div class="pt-flow">empty repo + roadmap at root → First Codex prompt → 30-step creation order → 15-criteria gate → Claude's 15-point review → BLOCKERs resolved → accept → only then Phase 1</div>
+      <p>Phase 0A creates the whole skeleton before any functionality: <b>AGENTS.md</b> (13-section engineering contract), <b>CLAUDE.md</b> (the bridge — Claude doesn't read AGENTS.md natively, so CLAUDE.md can open with an <b>@AGENTS.md import</b> and stay under ~200 lines), the six shared-memory files, config skeletons, package + test scaffolding, and a bootstrap validator. One addition v1.4 predates: tell Codex to include <b>config/brand.json</b> and the Amazwi design contract in the tree.</p>
+    </div>
+  </div>
+
+  <div class="lib-group">Shared agent memory — repo-owned, provider-neutral</div>
+  <div class="lib">
+    <div><div class="name">CURRENT_STATE.md</div><span class="tag">SNAPSHOT</span></div>
+    <div><div class="what">Phase, milestone, <b>what works, what's broken</b>, next approved task, last good commit. Reality, never aspiration.</div></div>
+  </div>
+  <div class="lib">
+    <div><div class="name">PROJECT_MEMORY.md</div><span class="tag">LESSONS</span></div>
+    <div><div class="what"><b>Durable, verified engineering knowledge only</b> — hardware quirks, proven commands, root causes. Never a chat transcript.</div></div>
+  </div>
+  <div class="lib">
+    <div><div class="name">HANDOFF.md</div><span class="tag">BATON</span></div>
+    <div><div class="what">Every significant task ends with one: scope, changes, <b>tests actually executed</b>, risks, what needs your approval. The next agent reads it first.</div></div>
+  </div>
+  <div class="lib">
+    <div><div class="name">REVIEW_LOG.md</div><span class="tag">APPEND-ONLY</span></div>
+    <div><div class="what">Every review finding with severity — <b>BLOCKER · HIGH · MEDIUM · LOW · NOTE</b> — and its disposition. Nothing silently erased.</div></div>
+  </div>
+  <div class="lib">
+    <div><div class="name">OPEN_QUESTIONS.md + ADRs</div><span class="tag">DECISIONS</span></div>
+    <div><div class="what">Unresolved questions parked with options and a recommendation; resolved ones become <b>Architecture Decision Records.</b></div></div>
+  </div>
+  <div class="lib">
+    <div><div class="name">CAPABILITY_LEDGER.md</div><span class="tag">MATURITY</span></div>
+    <div><div class="what">The Experience Compiler's ladder as a table: capability, <b>L-level, local vs assisted successes, last verified.</b> Harry's independence, measured.</div></div>
+  </div>
+
+  <div class="pattern">
+    <div class="pt-key"><span class="pn">⎘</span>THE TWO PROMPTS</div>
+    <div class="pt-body">
+      <h3>Copy these when the laptop is ready</h3>
+      <p style="margin-bottom:14px"><b>1 · First Codex prompt</b> — paste into <span style="font-family:var(--mono);font-size:12px">codex</span> in the empty repo:</p>
+      <div class="cmd" onclick="copyCmd(this)">Read HARRY_ARCHITECTURE_ROADMAP_v1.4.md in full.
+
+We are starting Phase 0A only.
+
+You are the primary implementation agent. Follow the Bootstrap Contract and execute the exact Phase 0A creation order. Create every mandatory repository-governance, documentation, shared-memory, configuration, package, test and bootstrap file specified in the roadmap.
+
+Do not implement Phase 1 voice functionality yet.
+Do not add paid API dependencies.
+Do not invent my hardware specifications; inspect the machine.
+Do not weaken security or permission rules for convenience.
+Do not skip AGENTS.md, CLAUDE.md or the shared agent-context files.
+
+Before changing files, briefly state the Phase 0A plan.
+
+After implementation:
+- run every Phase 0A validation you can run locally;
+- update CURRENT_STATE.md;
+- update HANDOFF.md;
+- show me the test results;
+- show me a concise Git diff summary;
+- tell me whether every Phase 0A acceptance criterion passed;
+- stop for my review.</div>
+      <p style="margin:22px 0 14px"><b>2 · Claude Code review prompt</b> — after Codex stops:</p>
+      <div class="cmd" onclick="copyCmd(this)">Read CLAUDE.md, AGENTS.md and HARRY_ARCHITECTURE_ROADMAP_v1.4.md.
+
+You are the independent reviewer, not the primary implementer.
+
+Review the completed Phase 0A repository against every Phase 0A requirement and acceptance gate. Inspect the actual files, Git diff/commit, tests, security configuration, shared-memory design, Python packaging and hardware-report process.
+
+Do not rewrite working code merely for stylistic preference.
+Do not begin Phase 1.
+
+Record your findings in docs/agent-context/REVIEW_LOG.md using BLOCKER, HIGH, MEDIUM, LOW or NOTE severity.
+
+At the end tell me:
+1. whether Phase 0A is safe to accept;
+2. every unresolved BLOCKER/HIGH issue;
+3. the smallest set of fixes required before Phase 1;
+4. anything Codex claimed to validate that the repository evidence does not actually prove.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="k">The recovery requirement — core invariant</div>
+    <p>The repository must stay understandable and resumable even if <b>every Codex conversation is deleted, every Claude conversation is deleted</b>, the laptop is rebuilt, or a different model becomes the primary agent. Roadmap + AGENTS.md + CLAUDE.md + ADRs + shared state + tests + Git history must be enough for a competent new agent to continue accurately. And one concurrency law: <b>never two agents in the same working tree at once</b> — no hard resets or force pushes without your explicit, per-operation approval.</p>
   </div>
 </section>
 
 <!-- ============ LIBRARIES ============ -->
 <section id="libs">
   <div class="pbar" data-speed="0.45" style="width:120px;height:56vh;top:12%;right:-60px"></div>
-  <div class="eyebrow"><span class="n">05</span> UI ARSENAL</div>
+  <div class="eyebrow"><span class="n">06</span> UI ARSENAL</div>
   <h2>Make Harry's face feel <span class="dim">like an awwwards site.</span></h2>
   <p class="lede">The libraries behind sites where scrolling feels expensive — elements pin, scrub, glide, and text assembles itself. Study winners at <b>awwwards.com</b> and <b>godly.website</b>.</p>
 
@@ -757,7 +801,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
 
 <!-- ============ SKILLS ============ -->
 <section id="skills">
-  <div class="eyebrow"><span class="n">06</span> SKILLS &amp; MCP</div>
+  <div class="eyebrow"><span class="n">07</span> SKILLS &amp; MCP</div>
   <h2>Don't hand-write every skill. <span class="dim">Plug into the ecosystem.</span></h2>
   <p class="lede">Your manifests are excellent — but they're a <b>hand-rolled version of MCP</b>, the open standard Anthropic and OpenAI tooling already speak. Strongest recommendation in this whole console: <b>make Harry an MCP client in Phase 2.</b> Then Harry, Claude Code and Codex share the same tool servers, and thousands of pre-built skills become plug-ins instead of projects.</p>
 
@@ -817,7 +861,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
 <section id="human">
   <div class="pbar" data-speed="0.55" style="width:105px;height:50vh;top:6%;left:-40px"></div>
   <div class="pbar deep" data-speed="0.28" style="width:185px;height:64vh;top:34%;right:-100px"></div>
-  <div class="eyebrow"><span class="n">07</span> IDENTITY &amp; AUTHORITY</div>
+  <div class="eyebrow"><span class="n">08</span> IDENTITY &amp; AUTHORITY</div>
   <h2>Personal from "Yo Harry." <span class="dim">Powerful on a leash.</span></h2>
   <p class="lede">v1.3's whole theme is the human layer. Harry opens with a <b>real first-run conversation</b>, keeps personality as editable config, asks before remembering anything — and holds Windows power through <b>scoped, revocable grants</b> with one universal stop.</p>
 
@@ -860,7 +904,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
 <!-- ============ OPERATING MODES ============ -->
 <section id="modes">
   <div class="pbar" data-speed="0.5" style="width:100px;height:48vh;top:10%;right:-45px"></div>
-  <div class="eyebrow"><span class="n">08</span> OPERATING MODES</div>
+  <div class="eyebrow"><span class="n">09</span> OPERATING MODES</div>
   <h2>One Harry. <span class="dim">Six lenses.</span></h2>
   <p class="lede">Modes are <b>policy and context lenses, not separate personalities.</b> Harry picks the mode from intent automatically — "Harry, switch to Career Mode" overrides. Same memory, same rules, different toolbelt.</p>
   <div class="agents">
@@ -895,7 +939,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
 <section id="compiler">
   <div class="pbar deep" data-speed="0.3" style="width:180px;height:66vh;top:24%;left:-95px"></div>
   <div class="pbar" data-speed="0.55" style="width:90px;height:42vh;top:4%;right:-35px"></div>
-  <div class="eyebrow"><span class="n">09</span> EXPERIENCE COMPILER</div>
+  <div class="eyebrow"><span class="n">10</span> EXPERIENCE COMPILER</div>
   <h2>Every consultation <span class="dim">makes the next one unnecessary.</span></h2>
   <p class="lede">Harry doesn't retrain weights — it <b>compiles experience into skills.</b> Cloud-assisted solutions get extracted into playbooks, tested in a sandbox, and promoted up this ladder until they run locally, free, offline.</p>
 
@@ -913,14 +957,14 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
 
   <div class="callout">
     <div class="k">The mentor engine</div>
-    <p>When the same class of problem escalates repeatedly, Harry proposes the promotion itself: <i>"I have consulted Codex for this workflow six times. I can turn the stable part into a local skill and test it. Approve?"</i> The consultation dashboard shows which tasks burn the most bridge usage — <b>that queue is the roadmap for what Harry learns next.</b> Demotion is one command when a skill regresses.</p>
+    <p>When the same class of problem escalates repeatedly, Harry proposes the promotion itself: <i>"I have consulted Codex for this workflow six times. I can turn the stable part into a local skill and test it. Approve?"</i> The consultation dashboard shows which tasks burn the most bridge usage — <b>that queue is the roadmap for what Harry learns next.</b> Demotion is one command when a skill regresses. And as of v1.4 the ladder is a file: <b>docs/agent-context/CAPABILITY_LEDGER.md</b> — capability, level, local vs assisted successes, last verified.</p>
   </div>
 </section>
 
 <!-- ============ LOCAL MODELS ============ -->
 <section id="models">
   <div class="pbar" data-speed="0.45" style="width:115px;height:52vh;top:14%;left:-55px"></div>
-  <div class="eyebrow"><span class="n">10</span> LOCAL ARSENAL — 16 GB EDITION</div>
+  <div class="eyebrow"><span class="n">11</span> LOCAL ARSENAL — 16 GB EDITION</div>
   <h2>Small specialists, <span class="dim">loaded on demand.</span></h2>
   <p class="lede">Not one giant model — <b>a bench of small specialists.</b> All tags verified on the Ollama library. The winners get chosen by <b>your</b> benchmarks in docs/benchmarks/local-models.md, not internet leaderboards.</p>
 
@@ -954,7 +998,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
 <!-- ============ DAY ONE ============ -->
 <section id="dayone">
   <div class="pbar deep" data-speed="0.35" style="width:150px;height:50vh;top:-10%;left:-70px"></div>
-  <div class="eyebrow"><span class="n">11</span> EXECUTION</div>
+  <div class="eyebrow"><span class="n">12</span> EXECUTION</div>
   <h2>Today's win <span class="dim">— the Day 1 loop.</span></h2>
   <div class="dayone">
     <h3>Fresh laptop → Harry speaks. That's the whole win.</h3>
@@ -965,11 +1009,11 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
       <div class="step"><b>03</b>Ollama — verify ≥ 0.17.4</div>
       <div class="step"><b>04</b>Codex CLI + ChatGPT sign-in</div>
       <div class="step"><b>05</b>Claude Code + subscription login</div>
-      <div class="step"><b>06</b>harry repo · README + AGENTS.md</div>
-      <div class="step"><b>07</b>Hardware audit → docs/hardware.md</div>
-      <div class="step"><b>08</b>venv (3.12) + pinned deps</div>
-      <div class="step"><b>09</b>espeak-ng MSI → Kokoro test</div>
-      <div class="step"><b>10</b>Mic → faster-whisper transcribes</div>
+      <div class="step"><b>06</b>git init harry · roadmap v1.4 at the root</div>
+      <div class="step"><b>07</b>★ Phase 0A — First Codex prompt → governed tree</div>
+      <div class="step"><b>08</b>Claude review → BLOCKERs resolved → accept 0A</div>
+      <div class="step"><b>09</b>hardware_report.ps1 → docs/hardware.md</div>
+      <div class="step"><b>10</b>venv 3.12 · espeak-ng · voice deps · Kokoro test</div>
       <div class="step"><b>11</b>ollama pull qwen3.5:4b — responds</div>
       <div class="step"><b>12</b>Wire the loop: PTT → STT → LLM → TTS</div>
     </div>
@@ -979,6 +1023,10 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
       <a href="https://docs.ollama.com" target="_blank" rel="noopener">ollama docs</a>
       <a href="https://developers.openai.com/codex/" target="_blank" rel="noopener">codex docs</a>
       <a href="https://code.claude.com/docs/en/setup" target="_blank" rel="noopener">claude code setup</a>
+      <a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener">claude memory</a>
+      <a href="https://code.claude.com/docs/en/hooks" target="_blank" rel="noopener">claude hooks</a>
+      <a href="https://developers.openai.com/codex/guides/agents-md" target="_blank" rel="noopener">codex agents.md</a>
+      <a href="https://agents.md" target="_blank" rel="noopener">agents.md standard</a>
       <a href="https://docs.anthropic.com/en/docs/claude-code/sdk/sdk-headless" target="_blank" rel="noopener">claude headless</a>
       <a href="https://github.com/dscripka/openWakeWord" target="_blank" rel="noopener">openwakeword</a>
       <a href="https://github.com/snakers4/silero-vad" target="_blank" rel="noopener">silero-vad</a>
@@ -1001,18 +1049,18 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
   <div class="f-chev"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <p class="fq">"The laptop becomes the <span>control plane</span>."</p>
   <p class="fs">— YOUR OWN ROADMAP · THE SMARTEST LINE IN IT</p>
-  <p class="fs b">AMAZWI · VOICES — HARRY · HYBRID ADAPTIVE REASONING &amp; RESPONSE SYSTEM · ROADMAP v1.3 · 16 PHASES</p>
+  <p class="fs b">AMAZWI · VOICES — HARRY · HYBRID ADAPTIVE REASONING &amp; RESPONSE SYSTEM · ROADMAP v1.4 · 16 PHASES</p>
 </footer>
 
 </div>
 
 <script>
-/* ---------------- Phase data (roadmap v1.3 — 16 phases) ---------------- */
+/* ---------------- Phase data (roadmap v1.4 — 16 phases) ---------------- */
 const PHASES=[
  {n:0,ver:'FOUNDATION',title:'Fresh Machine Foundation',obj:'Turn the reset laptop into a known, secure dev environment and record its real hardware. Every later decision leans on docs/hardware.md.',
-  ship:['Windows updated · HP + NVIDIA drivers current','Git, Python 3.12, VS Code, Node 24 LTS installed','Ollama ≥ 0.17.4 · Codex CLI + Claude Code signed in on subscription','Hardware audit committed to docs/hardware.md'],
+  ship:['Phase 0A FIRST: governed repo — AGENTS.md · CLAUDE.md · shared agent memory · bootstrap_check passes','Windows updated · HP + NVIDIA drivers current','Git, Python 3.12, VS Code, Node 24 LTS installed','Ollama ≥ 0.17.4 · Codex CLI + Claude Code signed in on subscription','Hardware audit via scripts/hardware_report.ps1 → docs/hardware.md'],
   skills:['system.hardware_report','system.disk_status','system.network_status','system.battery_status'],
-  gate:'Every tool runs and reports a version. Hardware report committed. No random AI tooling beyond this approved baseline.',
+  gate:'Phase 0A accepted — all 15 criteria pass, every BLOCKER resolved, Claude’s review logged. Every tool runs and reports a version. Hardware report holds measured data, never guessed Pavilion specs.',
   fun:'Harry’s birth certificate — the local model gets chosen from measured numbers, not vibes.',
   inst:[
    {t:'Windows Update',w:'Settings → Windows Update → check repeatedly until clean. Then HP drivers for your exact serial.',u:'https://support.hp.com/drivers'},
@@ -1026,9 +1074,10 @@ const PHASES=[
    {t:'Ollama',u:'https://ollama.com/download/windows',c:'winget install Ollama.Ollama\nollama --version',w:'Must report ≥ 0.17.4 — qwen3.5’s architecture (Gated DeltaNet) needs it. Older installs silently fail to load the model.'},
    {t:'Codex CLI',u:'https://developers.openai.com/codex/cli',c:'powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"',w:'Official standalone installer — no Node required. Then run codex and sign in with your ChatGPT account. (npm alternative: npm i -g @openai/codex — the unscoped “codex” package is an unrelated trap.)'},
    {t:'Claude Code',u:'https://code.claude.com/docs/en/setup',c:'irm https://claude.ai/install.ps1 | iex',w:'Native Windows installer, no admin, no Node. Then run claude and log in with your Claude subscription.'},
+   {t:'Phase 0A bootstrap',c:'git init harry ; cd harry\n# place HARRY_ARCHITECTURE_ROADMAP_v1.4.md at the root\ncodex   # paste the First Codex prompt from section 05',w:'Governance before functionality. Codex creates the entire tree and stops; Claude Code reviews; you accept. Only then does Phase 1 exist.'},
    {t:'Hardware audit',c:'Get-CimInstance Win32_Processor | Select Name,NumberOfCores,NumberOfLogicalProcessors\nGet-CimInstance Win32_PhysicalMemory | Select Manufacturer,Capacity,Speed\nGet-CimInstance Win32_VideoController | Select Name,AdapterRAM,DriverVersion\nGet-PhysicalDisk | Select FriendlyName,MediaType,Size\nnvidia-smi',w:'Paste results into docs/hardware.md and commit. This file decides Harry’s model sizes.'}
   ],
-  note:'<b>RAM is not VRAM.</b> A GTX 1650-class GPU (~4 GB) stays a 4 GB GPU after the 32 GB upgrade — CPU inference remains the workhorse, which is exactly why the 4B model is the always-on brain.'},
+  note:'<b>RAM is not VRAM.</b> A GTX 1650-class GPU (~4 GB) stays a 4 GB GPU after the 32 GB upgrade — CPU inference remains the workhorse. And v1.4’s hard rule: <b>no Harry functionality before Phase 0A passes.</b> The repo is born governed.'},
 
  {n:1,ver:'v0.1 · VOICE',title:'Harry Speaks',obj:'A complete local voice loop: push-to-talk → transcribe → local LLM → spoken reply. Wake word only after the loop is stable — debugging four subsystems at once hides which one failed.',
   ship:['Silero VAD + faster-whisper transcription','Ollama running qwen3.5:4b (then benchmark alternatives)','Kokoro speaking replies through the speakers','Phase 1B: first-run onboarding → local profile, personality + voice chosen','openWakeWord “Yo Harry” — stretch goal, not day one'],
@@ -1081,7 +1130,7 @@ const PHASES=[
    {t:'Claude Code — headless bridge',u:'https://docs.anthropic.com/en/docs/claude-code/sdk/sdk-headless',c:'claude -p "&lt;scoped task&gt;" --output-format json --allowedTools "Read,Bash"',w:'Returns structured JSON: result, session_id, cost, turns. Resume long jobs with --resume &lt;session_id&gt;. This flag IS the subscription bridge.'},
    {t:'Codex — headless bridge',u:'https://developers.openai.com/codex/',c:'codex exec --json "&lt;scoped task&gt;"',w:'Streams JSONL events (turn.completed carries usage). Read-only sandbox by default — escalate deliberately. Add --output-schema schema.json for typed output. Requires a Git repo.'}
   ],
-  note:'Voice coding works for architecture, commands, refactors, tests and review — <b>not character-level edits.</b> Say “replace the validation method with the version we discussed”, never dictate syntax.'},
+  note:'Voice coding works for architecture, commands, refactors, tests and review — <b>not character-level edits.</b> Say “replace the validation method with the version we discussed”, never dictate syntax. Default roles per v1.4: <b>Codex implements, Claude Code reviews into REVIEW_LOG.md, you decide.</b>'},
 
  {n:5,ver:'v0.5 · ASSISTANT',title:'Email, Calendar & Intake',obj:'A genuine personal assistant. Official OAuth APIs only — never scraped browser sessions, never stored raw passwords.',
   ship:['Email search / read / draft via Gmail API + OAuth','Calendar read; mutations approval-gated','Project intake: brief email → requirements → proposed plan','Prompt-injection defense enforced in the policy engine'],
