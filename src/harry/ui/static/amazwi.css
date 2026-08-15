@@ -1,0 +1,197 @@
+/* ==========================================================================
+   AMAZWI — Harry's visual identity
+   Generated from config/brand.json. Do not edit tokens here; edit brand.json.
+   Load this once per surface (projector HUD, phone PWA, console).
+   ========================================================================== */
+
+:root {
+  /* ---- colour ---- */
+  --amz-bg: #050805;
+  --amz-bg-raised: #0B1109;
+  --amz-ink: #EDF7DF;
+  --amz-muted: #93A681;
+  --amz-faint: #4C5C3F;
+  --amz-lime: #B9FF3C;
+  --amz-lime-dim: #7CB82F;
+  --amz-lime-deep: #1D2C0F;
+  --amz-pale: #E9FFB0;
+  --amz-on-lime: #0B1404;
+  --amz-glass: rgba(14, 20, 10, .46);
+  --amz-glass-bright: rgba(20, 30, 14, .64);
+  --amz-stroke: rgba(185, 255, 60, .10);
+  --amz-stroke-bright: rgba(185, 255, 60, .26);
+
+  /* ---- type ---- */
+  --amz-display: 'Unbounded', sans-serif;
+  --amz-body: 'Space Grotesk', sans-serif;
+  --amz-mono: 'JetBrains Mono', monospace;
+  --amz-tracking-tight: -.015em;
+  --amz-tracking-label: .24em;
+  --amz-tracking-label-wide: .34em;
+
+  /* ---- radius + space ---- */
+  --amz-r-sm: 10px;  --amz-r-md: 14px;  --amz-r-lg: 18px;
+  --amz-r-xl: 22px;  --amz-r-pill: 100px;
+  --amz-s1: 6px;  --amz-s2: 10px; --amz-s3: 14px; --amz-s4: 20px;
+  --amz-s5: 28px; --amz-s6: 40px; --amz-s7: 60px; --amz-s8: 90px;
+
+  /* ---- motion ---- */
+  --amz-ease: cubic-bezier(.22, 1, .36, 1);
+  --amz-ease-out: cubic-bezier(.16, 1, .3, 1);
+  --amz-fast: 220ms;
+  --amz-base: 420ms;
+  --amz-slow: 900ms;
+  --amz-crossfade: 320ms;
+
+  /* ---- waveform sizing (override per surface) ---- */
+  --amz-wave-height: 220px;
+  --amz-wave-bar: 18px;
+  --amz-wave-gap: 14px;
+  --amz-wave-color: var(--amz-lime);
+  --amz-wave-glow: 26px;
+}
+
+/* Surface presets — set one of these on a wrapper or :root */
+.amz-surface-projector { --amz-wave-height: 46vh; --amz-wave-bar: 28px; --amz-wave-gap: 20px; --amz-wave-glow: 40px; }
+.amz-surface-pwa       { --amz-wave-height: 64px;  --amz-wave-bar: 10px; --amz-wave-gap: 7px;  --amz-wave-glow: 14px; }
+.amz-surface-console   { --amz-wave-height: 220px; --amz-wave-bar: 18px; --amz-wave-gap: 14px; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+.amz-root {
+  background: var(--amz-bg);
+  color: var(--amz-ink);
+  font-family: var(--amz-body);
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.amz-label {
+  font-family: var(--amz-mono);
+  font-size: 10px;
+  letter-spacing: var(--amz-tracking-label-wide);
+  text-transform: uppercase;
+  color: var(--amz-faint);
+}
+
+.amz-chevrons { display: flex; gap: var(--amz-s3); }
+.amz-chevrons i {
+  width: 22px; height: 13px; display: block;
+  clip-path: polygon(0 100%, 50% 0, 100% 100%, 84% 100%, 50% 26%, 16% 100%);
+  background: var(--amz-lime-dim);
+}
+.amz-chevrons i:nth-child(even) { background: var(--amz-lime-deep); }
+
+/* ==========================================================================
+   The waveform
+   Seven bars form an H. Inner bars are capped below the outer bars so the
+   letterform survives every amplitude. Bar height = --h (0..1 of container).
+   ========================================================================== */
+
+.amz-wave {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--amz-wave-gap);
+  height: var(--amz-wave-height);
+  filter: drop-shadow(0 0 var(--amz-wave-glow) rgba(185, 255, 60, .35));
+  transition: filter var(--amz-crossfade) var(--amz-ease);
+}
+
+.amz-wave i {
+  display: block;
+  width: var(--amz-wave-bar);
+  height: calc(var(--h, .5) * 100%);
+  border-radius: var(--amz-r-pill);
+  background: var(--amz-wave-color);
+  transform-origin: center;
+  transition:
+    height 90ms linear,
+    background var(--amz-crossfade) var(--amz-ease),
+    opacity var(--amz-crossfade) var(--amz-ease);
+}
+
+/* ---------- idle: slow breathing, resting ---------- */
+.amz-wave[data-state="idle"] { --amz-wave-color: var(--amz-lime-dim); --amz-wave-glow: 10px; }
+.amz-wave[data-state="idle"] i { animation: amz-breathe 4.2s var(--amz-ease) infinite; animation-delay: var(--d, 0s); }
+@keyframes amz-breathe { 0%, 100% { transform: scaleY(.82); opacity: .55 } 50% { transform: scaleY(1); opacity: .8 } }
+
+/* ---------- thinking: symmetric local pulse ---------- */
+.amz-wave[data-state="thinking"] { --amz-wave-color: var(--amz-lime); }
+.amz-wave[data-state="thinking"] i { animation: amz-pulse 1.9s ease-in-out infinite; animation-delay: var(--d, 0s); }
+@keyframes amz-pulse { 0%, 100% { transform: scaleY(.7) } 50% { transform: scaleY(1.18) } }
+
+/* ---------- bridging: faster pale ripple — DATA HAS LEFT THE MACHINE ---------- */
+.amz-wave[data-state="bridging"] { --amz-wave-color: var(--amz-pale); }
+.amz-wave[data-state="bridging"] i { animation: amz-ripple 1.05s ease-in-out infinite; animation-delay: var(--dr, 0s); }
+@keyframes amz-ripple { 0%, 100% { transform: scaleY(.6); opacity: .7 } 45% { transform: scaleY(1.3); opacity: 1 } }
+
+/* ---------- working: a scan travelling left to right ---------- */
+.amz-wave[data-state="working"] { --amz-wave-color: var(--amz-lime-dim); }
+.amz-wave[data-state="working"] i { animation: amz-scan 1.5s ease-in-out infinite; animation-delay: var(--dr, 0s); }
+@keyframes amz-scan { 0%, 70%, 100% { transform: scaleY(.75); opacity: .5 } 20% { transform: scaleY(1.2); opacity: 1 } }
+
+/* ---------- approval: frozen tall, slow blink, unmissable ---------- */
+.amz-wave[data-state="approval"] { --amz-wave-color: var(--amz-pale); --amz-wave-glow: 44px; }
+.amz-wave[data-state="approval"] i { animation: amz-hold 1.5s steps(1, end) infinite; }
+@keyframes amz-hold { 0%, 55% { opacity: 1 } 56%, 100% { opacity: .28 } }
+
+/* ---------- done: bright flash, then settle ---------- */
+.amz-wave[data-state="done"] { --amz-wave-color: var(--amz-lime); --amz-wave-glow: 50px; }
+.amz-wave[data-state="done"] i { animation: amz-settle 1.6s var(--amz-ease-out) 1 both; animation-delay: var(--d, 0s); }
+@keyframes amz-settle { 0% { transform: scaleY(1.35) } 60% { transform: scaleY(.9) } 100% { transform: scaleY(1) } }
+
+/* ---------- error: collapse to a dim flat line ---------- */
+.amz-wave[data-state="error"] { --amz-wave-color: var(--amz-faint); --amz-wave-glow: 0px; }
+.amz-wave[data-state="error"] i { height: 6px !important; opacity: .8; transition: height var(--amz-base) var(--amz-ease); }
+
+/* ---------- amplitude states: JS drives --h, no CSS animation ---------- */
+.amz-wave[data-state="listening"] { --amz-wave-color: var(--amz-lime); }
+.amz-wave[data-state="speaking"]  { --amz-wave-color: var(--amz-lime); }
+.amz-wave[data-state="listening"] i,
+.amz-wave[data-state="speaking"] i { animation: none; }
+
+/* ==========================================================================
+   State caption — the words under the waveform
+   ========================================================================== */
+
+.amz-state {
+  display: flex; flex-direction: column; align-items: center; gap: var(--amz-s4);
+}
+.amz-state-label {
+  font-family: var(--amz-mono);
+  letter-spacing: var(--amz-tracking-label-wide);
+  text-transform: uppercase;
+  color: var(--amz-muted);
+  font-size: 11px;
+}
+.amz-state-title {
+  font-family: var(--amz-display);
+  font-weight: 600;
+  letter-spacing: var(--amz-tracking-tight);
+  color: var(--amz-ink);
+  text-align: center;
+}
+.amz-surface-projector .amz-state-title { font-size: clamp(28px, 4vw, 56px); }
+.amz-surface-projector .amz-state-label { font-size: 14px; }
+.amz-surface-pwa .amz-state-title { font-size: 15px; }
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .amz-wave i {
+    animation: none !important;
+    transition: height var(--amz-fast) linear, background var(--amz-fast) linear;
+  }
+}
+
+.amz-wave:focus-visible,
+:where(button, a, [tabindex]):focus-visible {
+  outline: 2px solid var(--amz-lime);
+  outline-offset: 3px;
+}
