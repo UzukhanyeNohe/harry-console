@@ -299,6 +299,11 @@ h2 .dim{color:var(--faint);font-weight:300}
 .step{font-family:var(--mono);font-size:12.5px;padding:16px 18px;border-radius:14px;
   color:var(--muted);background:var(--glass);border:1px solid var(--stroke);transition:.3s;letter-spacing:.02em}
 .step:hover{border-color:var(--stroke-brt);color:var(--ink)}
+a.step{text-decoration:none;display:block}
+a.step::after{content:" →";color:var(--lime);opacity:0;transition:opacity .25s}
+a.step:hover::after{opacity:1}
+.xref{color:var(--lime);text-decoration:none;border-bottom:1px solid var(--stroke-brt)}
+.xref:hover{border-color:var(--lime)}
 .step b{color:var(--lime);font-weight:500;margin-right:10px}
 .dayone{border-radius:22px;padding:46px 44px;
   background:linear-gradient(150deg,rgba(185,255,60,.09),rgba(14,20,10,.5));
@@ -463,7 +468,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero-left">
-    <div class="h-eyebrow">AMAZWI — PERSONAL AI OPERATING LAYER<span class="vtag">ROADMAP v1.5</span></div>
+    <div class="h-eyebrow">AMAZWI — PERSONAL AI OPERATING LAYER<span class="vtag">ROADMAP v1.6</span></div>
     <h1>HARRY</h1>
     <div class="h-acr"><b>H</b>ybrid <b>A</b>daptive <b>R</b>easoning &amp; <b>R</b>esponse s<b>Y</b>stem</div>
     <p class="hero-tag">Not a chatbot. A <em>control plane</em> above Windows that commands local models, Claude, OpenAI, your files, your code and your voice — reversible, auditable, and entirely yours.</p>
@@ -717,7 +722,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
   <div class="pbar deep" data-speed="0.3" style="width:170px;height:60vh;top:30%;left:-90px"></div>
   <div class="eyebrow"><span class="n">05</span> THE BOOTSTRAP CONTRACT</div>
   <h2>Codex builds. Claude reviews. <span class="dim">You decide.</span></h2>
-  <p class="lede">v1.4 turns the roadmap into an <b>executable specification.</b> Drop it at the root of an empty repo, paste one prompt, and the project builds its own governance before a single line of Harry exists — with agent behaviour verified against current provider docs, not assumed.</p>
+  <p class="lede">v1.4 turns the roadmap into an <b>executable specification.</b> Drop it at the root of an empty repo, paste <a href="#contract" class="xref">one prompt</a>, and the project builds its own governance before a single line of Harry exists — with agent behaviour verified against current provider docs, not assumed.</p>
 
   <div class="pt-flow" style="margin-bottom:44px">Codex implements → tests + Git diff → Claude Code reviews → REVIEW_LOG (BLOCKER → NOTE) → you decide → approved fixes → phase gate</div>
 
@@ -776,7 +781,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
     <div class="pt-body">
       <h3>Copy these when the laptop is ready</h3>
       <p style="margin-bottom:14px"><b>1 · First Codex prompt</b> — paste into <span style="font-family:var(--mono);font-size:12px">codex</span> in the empty repo:</p>
-      <div class="cmd" onclick="copyCmd(this)">Read HARRY_ARCHITECTURE_ROADMAP_v1.5.md in full.
+      <div class="cmd" onclick="copyCmd(this)">Read HARRY_ARCHITECTURE_ROADMAP_v1.6.md in full.
 
 We are starting Phase 0A only.
 
@@ -799,7 +804,7 @@ After implementation:
 - tell me whether every Phase 0A acceptance criterion passed;
 - stop for my review.</div>
       <p style="margin:22px 0 14px"><b>2 · Claude Code review prompt</b> — after Codex stops:</p>
-      <div class="cmd" onclick="copyCmd(this)">Read CLAUDE.md, AGENTS.md and HARRY_ARCHITECTURE_ROADMAP_v1.5.md.
+      <div class="cmd" onclick="copyCmd(this)">Read CLAUDE.md, AGENTS.md and HARRY_ARCHITECTURE_ROADMAP_v1.6.md.
 
 You are the independent reviewer, not the primary implementer.
 
@@ -1168,18 +1173,18 @@ At the end tell me:
     <h3>Fresh laptop → Harry speaks. That's the whole win.</h3>
     <div class="st">STRETCH · "YO HARRY" WAKE WORD — BUT DON'T FORCE IT TODAY</div>
     <div class="steps">
-      <div class="step"><b>01</b>Windows Update + HP / NVIDIA drivers</div>
-      <div class="step"><b>02</b>winget: Git · Python 3.12 · VS Code · Node 24</div>
-      <div class="step"><b>03</b>Ollama — verify ≥ 0.17.4</div>
-      <div class="step"><b>04</b>Codex CLI + ChatGPT sign-in</div>
-      <div class="step"><b>05</b>Claude Code + subscription login</div>
-      <div class="step"><b>06</b>git init harry · roadmap v1.5 at the root</div>
-      <div class="step"><b>07</b>★ Phase 0A — First Codex prompt → governed tree</div>
-      <div class="step"><b>08</b>Claude review → BLOCKERs resolved → accept 0A</div>
-      <div class="step"><b>09</b>hardware_report.ps1 → docs/hardware.md</div>
-      <div class="step"><b>10</b>venv 3.12 · espeak-ng · voice deps · Kokoro test</div>
-      <div class="step"><b>11</b>ollama pull qwen3.5:4b — responds</div>
-      <div class="step"><b>12</b>Wire the loop: PTT → STT → LLM → TTS</div>
+      <a class="step" href="#phase-0"><b>01</b>Windows Update + HP / NVIDIA drivers</a>
+      <a class="step" href="#phase-0"><b>02</b>winget: Git · Python 3.12 · VS Code · Node 24</a>
+      <a class="step" href="#models"><b>03</b>Ollama — verify ≥ 0.17.4</a>
+      <a class="step" href="#council"><b>04</b>Codex CLI + ChatGPT sign-in</a>
+      <a class="step" href="#council"><b>05</b>Claude Code + subscription login</a>
+      <a class="step" href="#contract"><b>06</b>git init harry · roadmap v1.6 at the root</a>
+      <a class="step" href="#contract"><b>07</b>★ Phase 0A — First Codex prompt → governed tree</a>
+      <a class="step" href="#contract"><b>08</b>Claude review → BLOCKERs resolved → accept 0A</a>
+      <a class="step" href="#phase-0"><b>09</b>hardware_report.ps1 → docs/hardware.md</a>
+      <a class="step" href="#phase-1"><b>10</b>venv 3.12 · espeak-ng · voice deps · Kokoro test</a>
+      <a class="step" href="#models"><b>11</b>ollama pull qwen3.5:4b — responds</a>
+      <a class="step" href="#phase-1"><b>12</b>Wire the loop: PTT → STT → LLM → TTS</a>
     </div>
     <p class="after">Then the acceptance test, off Wi-Fi: <b>"Harry, tell me what model you're running and whether we're offline."</b> When it answers with the internet unplugged — Phase 1 is real. Wake word is the stretch goal; never sacrifice clean architecture to force it into the first session.</p>
     <div class="srcs">
@@ -1238,7 +1243,7 @@ const PHASES=[
    {t:'Ollama',u:'https://ollama.com/download/windows',c:'winget install Ollama.Ollama\nollama --version',w:'Must report ≥ 0.17.4 — qwen3.5’s architecture (Gated DeltaNet) needs it. Older installs silently fail to load the model.'},
    {t:'Codex CLI',u:'https://developers.openai.com/codex/cli',c:'powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"',w:'Official standalone installer — no Node required. Then run codex and sign in with your ChatGPT account. (npm alternative: npm i -g @openai/codex — the unscoped “codex” package is an unrelated trap.)'},
    {t:'Claude Code',u:'https://code.claude.com/docs/en/setup',c:'irm https://claude.ai/install.ps1 | iex',w:'Native Windows installer, no admin, no Node. Then run claude and log in with your Claude subscription.'},
-   {t:'Phase 0A bootstrap',c:'git init harry ; cd harry\n# place HARRY_ARCHITECTURE_ROADMAP_v1.5.md at the root\ncodex   # paste the First Codex prompt from section 05',w:'Governance before functionality. Codex creates the entire tree and stops; Claude Code reviews; you accept. Only then does Phase 1 exist.'},
+   {t:'Phase 0A bootstrap',c:'git init harry ; cd harry\n# place HARRY_ARCHITECTURE_ROADMAP_v1.6.md at the root\ncodex   # paste the First Codex prompt from section 05',w:'Governance before functionality. Codex creates the entire tree and stops; Claude Code reviews; you accept. Only then does Phase 1 exist.'},
    {t:'Hardware audit',c:'Get-CimInstance Win32_Processor | Select Name,NumberOfCores,NumberOfLogicalProcessors\nGet-CimInstance Win32_PhysicalMemory | Select Manufacturer,Capacity,Speed\nGet-CimInstance Win32_VideoController | Select Name,AdapterRAM,DriverVersion\nGet-PhysicalDisk | Select FriendlyName,MediaType,Size\nnvidia-smi',w:'Paste results into docs/hardware.md and commit. This file decides Harry’s model sizes.'}
   ],
   note:'<b>RAM is not VRAM.</b> A GTX 1650-class GPU (~4 GB) stays a 4 GB GPU after the 32 GB upgrade — CPU inference remains the workhorse. And v1.4’s hard rule: <b>no Harry functionality before Phase 0A passes.</b> The repo is born governed.'},
@@ -1408,7 +1413,7 @@ const PHASES=[
 /* ---------------- Render ---------------- */
 const list=document.getElementById('phaseList');
 list.innerHTML=PHASES.map((p,i)=>`
- <div class="phase" data-i="${i}">
+ <div class="phase" id="phase-${p.n}" data-i="${i}">
   <div class="ph-dot"></div>
   <div class="ph-ghost">${String(p.n).padStart(2,'0')}</div>
   <div class="ph-card">
@@ -1569,6 +1574,18 @@ addEventListener('scroll',onScroll,{passive:true});onScroll();
 if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost')){
   addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 }
+
+/* deep-link: #phase-N opens that phase and scrolls to it */
+function openPhaseFromHash(){
+  const m=(location.hash||'').match(/^#phase-(\d+)$/);
+  if(!m) return;
+  const el=document.getElementById('phase-'+m[1]);
+  if(!el) return;
+  el.classList.add('open');
+  requestAnimationFrame(()=>el.scrollIntoView({behavior:'smooth',block:'start'}));
+}
+addEventListener('hashchange',openPhaseFromHash);
+openPhaseFromHash();
 </script>
 </body>
 </html>
