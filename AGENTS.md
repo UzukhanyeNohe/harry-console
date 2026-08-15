@@ -31,7 +31,21 @@ src/harry/ui/static/amazwi-wave.js
 docs/design/AMAZWI.md
 ```
 
-`config/brand.json` is not present yet.
+### Known gaps in token coverage
+
+The generated files are consistent with `brand.json` — every colour, type,
+radius, space and motion token matches, as do the waveform profile, the
+smoothing constants and all nine state labels and priorities. Three values in
+the generated files have no `brand.json` source and should be added there
+rather than edited locally:
+
+- waveform **heights** — `--amz-wave-height` and the per-surface heights
+  (projector `46vh`, pwa `64px`, console `220px`); `brand.json` defines
+  `barWidth` and `gap` per surface but not height;
+- the glow colour `rgba(185,255,60,.35)`, hard-coded in the CSS `drop-shadow`
+  and again in the component's shadow styles, while `brand.json` carries
+  `waveform.glow` as a complete drop-shadow string;
+- the `var(--amz-*, #hex)` fallbacks inside `amazwi-wave.js`.
 
 ## Deployment
 

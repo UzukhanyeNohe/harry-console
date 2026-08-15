@@ -1,0 +1,135 @@
+{
+  "$comment": "AMAZWI — the visual identity for HARRY. Single source of truth. Every surface (projector HUD, phone PWA, build console, CLI banner) derives from this file. Do not hard-code hex values or font names anywhere else in the repo.",
+  "meta": {
+    "name": "Amazwi",
+    "meaning": "isiXhosa for 'voices'",
+    "version": "1.0.0",
+    "updated": "2026-08-14",
+    "appliesTo": ["projector-hud", "phone-pwa", "build-console", "cli"],
+    "prefix": "--amz-"
+  },
+
+  "color": {
+    "bg": "#050805",
+    "bgRaised": "#0B1109",
+    "ink": "#EDF7DF",
+    "muted": "#93A681",
+    "faint": "#4C5C3F",
+    "lime": "#B9FF3C",
+    "limeDim": "#7CB82F",
+    "limeDeep": "#1D2C0F",
+    "pale": "#E9FFB0",
+    "onLime": "#0B1404",
+    "glass": "rgba(14,20,10,.46)",
+    "glassBright": "rgba(20,30,14,.64)",
+    "stroke": "rgba(185,255,60,.10)",
+    "strokeBright": "rgba(185,255,60,.26)"
+  },
+
+  "colorSemantics": {
+    "$comment": "Colour carries meaning in Amazwi. These rules are not decorative — they are how the user reads system state from across a room.",
+    "lime": "Local. Alive. Nothing has left this machine.",
+    "pale": "Attention, or data in flight to a cloud bridge. Pale means either 'I need you' or 'this left the laptop'.",
+    "faint": "Dormant or failed. The absence of lime is the alarm.",
+    "rule": "Never introduce a third hue (no red, amber or blue) for state. Meaning is carried by lime / pale / faint plus motion."
+  },
+
+  "typography": {
+    "display": {
+      "family": "Unbounded",
+      "fallback": "sans-serif",
+      "weights": [300, 400, 500, 600, 700, 800],
+      "use": "Headings, the HARRY wordmark, state titles on the projector."
+    },
+    "body": {
+      "family": "Space Grotesk",
+      "fallback": "sans-serif",
+      "weights": [300, 400, 500, 600],
+      "use": "Prose, transcripts, card copy."
+    },
+    "mono": {
+      "family": "JetBrains Mono",
+      "fallback": "monospace",
+      "weights": [300, 400, 500],
+      "use": "Labels, skill names, commands, telemetry, everything with a letter-spaced uppercase treatment."
+    },
+    "googleFontsHref": "https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap",
+    "tracking": {
+      "tight": "-0.015em",
+      "normal": "0",
+      "label": "0.24em",
+      "labelWide": "0.34em"
+    }
+  },
+
+  "radius": { "sm": "10px", "md": "14px", "lg": "18px", "xl": "22px", "pill": "100px" },
+
+  "space": { "1": "6px", "2": "10px", "3": "14px", "4": "20px", "5": "28px", "6": "40px", "7": "60px", "8": "90px" },
+
+  "motion": {
+    "ease": "cubic-bezier(.22,1,.36,1)",
+    "easeOut": "cubic-bezier(.16,1,.3,1)",
+    "fast": "220ms",
+    "base": "420ms",
+    "slow": "900ms",
+    "stateCrossfade": "320ms",
+    "reducedMotion": "Respect prefers-reduced-motion everywhere. When reduced, the waveform holds a static profile and state is carried by colour and label only."
+  },
+
+  "waveform": {
+    "$comment": "The signature element. Seven bars form the letter H: two tall uprights each side, a short crossbar in the middle. The H MUST remain legible at every amplitude — this is why inner bars are capped below the outer bars.",
+    "canonicalBars": 7,
+    "profile": [
+      { "base": 0.94, "react": 0.10, "max": 1.00 },
+      { "base": 0.66, "react": 0.35, "max": 0.80 },
+      { "base": 0.28, "react": 0.85, "max": 0.58 },
+      { "base": 0.24, "react": 1.00, "max": 0.56 },
+      { "base": 0.30, "react": 0.85, "max": 0.58 },
+      { "base": 0.66, "react": 0.35, "max": 0.80 },
+      { "base": 0.94, "react": 0.10, "max": 1.00 }
+    ],
+    "smoothing": { "attack": 0.5, "release": 0.12, "$comment": "Rise fast so speech feels responsive, fall slow so it never strobes." },
+    "barWidth": { "projector": "28px", "pwa": "10px", "console": "18px", "cli": "n/a" },
+    "gap": { "projector": "20px", "pwa": "7px", "console": "14px" },
+    "glow": "drop-shadow(0 0 26px rgba(185,255,60,.35))"
+  },
+
+  "states": {
+    "$comment": "Labels match the projector strings in roadmap Phase 12 exactly. priority: higher wins when two states race — approval always beats everything.",
+    "idle":      { "label": "STANDING BY",     "color": "limeDim", "motion": "breathe",  "priority": 0, "meaning": "Harry is up and listening for the wake word. Nothing is running." },
+    "listening": { "label": "LISTENING",       "color": "lime",    "motion": "amplitude","priority": 4, "meaning": "Mic is open. Bars track your actual voice level.", "driven": "microphone" },
+    "thinking":  { "label": "THINKING LOCALLY","color": "lime",    "motion": "pulse",    "priority": 3, "meaning": "A local Ollama model is reasoning. Nothing has left the machine." },
+    "bridging":  { "label": "USING {agent}",   "color": "pale",    "motion": "ripple",   "priority": 3, "meaning": "A cloud bridge (Codex CLI or Claude Code) is working. Pale is deliberate: it tells you data left the laptop.", "agentDefault": "CLOUD" },
+    "working":   { "label": "RUNNING {task}",  "color": "limeDim", "motion": "scan",     "priority": 2, "meaning": "A deterministic skill is executing — tests, git, files. Not model reasoning.", "taskDefault": "TASK" },
+    "speaking":  { "label": "SPEAKING",        "color": "lime",    "motion": "amplitude","priority": 4, "meaning": "Kokoro is talking. Bars track the TTS output.", "driven": "tts" },
+    "approval":  { "label": "APPROVAL REQUIRED","color": "pale",   "motion": "hold",     "priority": 9, "meaning": "Harry is blocked on you. Bars freeze tall and blink slowly. This must be unmissable from three metres." },
+    "done":      { "label": "TASK COMPLETE",   "color": "lime",    "motion": "settle",   "priority": 5, "meaning": "Transient. Flashes bright, settles, auto-returns to idle.", "autoRevertMs": 1600, "revertTo": "idle" },
+    "error":     { "label": "FAILED",          "color": "faint",   "motion": "flatline", "priority": 8, "meaning": "Something broke. Bars collapse to a dim flat line — in a system where lime means alive, its absence is the alarm." }
+  },
+
+  "surfaces": {
+    "projector": {
+      "readDistance": "3m+",
+      "minStateTypeSize": "clamp(28px, 4vw, 56px)",
+      "rules": [
+        "State must be readable without reading text — colour and motion carry it first, the label confirms.",
+        "One idea on screen at a time. Never a dashboard.",
+        "No scroll, no hover, no small text. Nothing interactive.",
+        "Dark by default; the room is dim and the projector is the only light source."
+      ]
+    },
+    "pwa": {
+      "readDistance": "30cm",
+      "rules": [
+        "Thumb-first: primary actions in the lower third.",
+        "The waveform shrinks to a status strip, it does not dominate the screen.",
+        "Approval cards are the most important surface in the whole app — they must be reachable in one tap from anywhere.",
+        "Works offline; assume the tailnet drops."
+      ]
+    },
+    "console": {
+      "readDistance": "50cm",
+      "rules": ["Long-form and scroll-driven. This is the only surface where parallax and prose belong."]
+    }
+  }
+}
