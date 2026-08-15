@@ -373,6 +373,7 @@ img,svg,canvas{max-width:100%}
 .ph-grid>*,.irow,.irow>*,.pattern>*,.lib>*,.lrow>*,.insight>*,
 .agents>*,.steps>*,.blk,.pt-body,.in-body,.ph-card,.ph-top{min-width:0}
 .cmd,.pt-flow{max-width:100%}
+.chip,.srcs a{max-width:100%;overflow-wrap:anywhere}
 
 /* anchor targets must clear the fixed nav instead of landing under it */
 section,.phase{scroll-margin-top:96px}
@@ -462,7 +463,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero-left">
-    <div class="h-eyebrow">AMAZWI — PERSONAL AI OPERATING LAYER<span class="vtag">ROADMAP v1.4</span></div>
+    <div class="h-eyebrow">AMAZWI — PERSONAL AI OPERATING LAYER<span class="vtag">ROADMAP v1.5</span></div>
     <h1>HARRY</h1>
     <div class="h-acr"><b>H</b>ybrid <b>A</b>daptive <b>R</b>easoning &amp; <b>R</b>esponse s<b>Y</b>stem</div>
     <p class="hero-tag">Not a chatbot. A <em>control plane</em> above Windows that commands local models, Claude, OpenAI, your files, your code and your voice — reversible, auditable, and entirely yours.</p>
@@ -502,7 +503,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
   <div class="pbar deep" data-speed="0.25" style="width:170px;height:64vh;top:30%;left:-90px"></div>
   <div class="eyebrow"><span class="n">01</span> ANALYSIS</div>
   <h2>What you're actually building <span class="dim">— the read.</span></h2>
-  <p class="lede">All 4,773 lines of v1.4 reviewed — every model tag, installer, CLI flag and provider-behaviour claim verified against live sources. The architecture is sound, achievable on 16 GB, and now executable: hand it to the agents and the repo governs itself. Eight decisions carry the whole project — protect them.</p>
+  <p class="lede">All 5,585 lines of v1.5 reviewed — every model tag, installer, CLI flag and provider-behaviour claim verified against live sources. The architecture is sound, achievable on 16 GB, and now executable: hand it to the agents and the repo governs itself. Eight decisions carry the whole project — protect them.</p>
 
   <div class="callout" style="margin-top:0;margin-bottom:44px">
     <div class="k">The North Star — new in v1.3</div>
@@ -608,7 +609,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
 <section id="phases" style="padding-bottom:0">
   <div class="eyebrow"><span class="n">03</span> MISSION TIMELINE</div>
   <h2>Sixteen phases. <span class="dim">Each ships something you can use.</span></h2>
-  <p class="lede" style="margin-bottom:0">Tap a phase to open its briefing — now with <b>every install, exact link and command</b> inside. Tap a command to copy it. Mark a phase complete when its gate passes — <b>progress saves on this device.</b> New in v1.4: the Bootstrap Contract — Codex builds, Claude reviews, you decide — with mandatory Phase 0A and repo-owned agent memory. Still in from v1.3: onboarding, personality, authority.</p>
+  <p class="lede" style="margin-bottom:0">Tap a phase to open its briefing — now with <b>every install, exact link and command</b> inside. Tap a command to copy it. Mark a phase complete when its gate passes — <b>progress saves on this device.</b> New in v1.4: the Bootstrap Contract — Codex builds, Claude reviews, you decide — with mandatory Phase 0A and repo-owned agent memory. New in v1.5: Phase 3B — the Brain Visualizer, where Harry keeps the brain and the graph tool only gets a photograph. Still in from v1.3: onboarding, personality, authority.</p>
 </section>
 </div>
 
@@ -775,7 +776,7 @@ footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
     <div class="pt-body">
       <h3>Copy these when the laptop is ready</h3>
       <p style="margin-bottom:14px"><b>1 · First Codex prompt</b> — paste into <span style="font-family:var(--mono);font-size:12px">codex</span> in the empty repo:</p>
-      <div class="cmd" onclick="copyCmd(this)">Read HARRY_ARCHITECTURE_ROADMAP_v1.4.md in full.
+      <div class="cmd" onclick="copyCmd(this)">Read HARRY_ARCHITECTURE_ROADMAP_v1.5.md in full.
 
 We are starting Phase 0A only.
 
@@ -798,7 +799,7 @@ After implementation:
 - tell me whether every Phase 0A acceptance criterion passed;
 - stop for my review.</div>
       <p style="margin:22px 0 14px"><b>2 · Claude Code review prompt</b> — after Codex stops:</p>
-      <div class="cmd" onclick="copyCmd(this)">Read CLAUDE.md, AGENTS.md and HARRY_ARCHITECTURE_ROADMAP_v1.4.md.
+      <div class="cmd" onclick="copyCmd(this)">Read CLAUDE.md, AGENTS.md and HARRY_ARCHITECTURE_ROADMAP_v1.5.md.
 
 You are the independent reviewer, not the primary implementer.
 
@@ -1071,10 +1072,97 @@ At the end tell me:
   </div>
 </section>
 
+<!-- ============ THE BRAIN ============ -->
+<section id="brain">
+  <div class="pbar deep" data-speed="0.32" style="width:175px;height:64vh;top:20%;left:-90px"></div>
+  <div class="pbar" data-speed="0.5" style="width:95px;height:44vh;top:6%;right:-40px"></div>
+  <div class="eyebrow"><span class="n">12</span> THE BRAIN — CANONICAL VS VISUALIZER</div>
+  <h2>Harry owns the brain. <span class="dim">The graph tool only gets a photograph.</span></h2>
+  <p class="lede">v1.5's whole addition is one refusal: <b>no note-taking app ever becomes Harry's memory.</b> Logseq, Obsidian, Joplin, SiYuan, a vector-DB vendor — none of them. Harry keeps canonical memory and hands a viewer a <b>one-way, privacy-filtered, disposable projection.</b> Delete the projection and Harry loses nothing.</p>
+
+  <div class="pt-flow" style="margin-bottom:44px">canonical brain → privacy filter → projection builder → generated graph → viewer renders it &nbsp;·&nbsp; ONE WAY, ALWAYS</div>
+
+  <div class="me-note">
+    <h3>The hard invariant <span>— everything else is downstream of this</span></h3>
+    <p><b>A visualization tool may display Harry's knowledge, but it must never become the source of truth for it.</b> Harry must keep working if the viewer is missing, broken, uninstalled, or changes its storage format. No core capability may import a visualizer as a runtime dependency.</p>
+    <p>Which makes the decision not <i>"Harry uses Logseq"</i> but <b>"Harry supports visualizer adapters — Logseq is adapter #1."</b> That distinction is what keeps a beta third-party database out of your memory's critical path.</p>
+  </div>
+
+  <div class="callout">
+    <div class="k">Canonical vs derived — the layout that enforces it</div>
+    <p>Runtime personal memory lives <b>outside the Git repo</b>. The repo's <code>docs/agent-context/</code> files are engineering memory for the agents <i>building</i> Harry — a different thing entirely, and conflating them is how brains get committed to GitHub.</p>
+    <div class="cmd" onclick="copyCmd(this)">%USERPROFILE%\HarryData\
+├─ brain\          ← CANONICAL. brain.sqlite, knowledge\, indexes\
+├─ derived\        ← DISPOSABLE. visualizers\logseq\
+├─ backups\
+└─ logs\</div>
+    <p style="margin-top:14px">Harry owns memory IDs, timestamps, provenance, privacy class, relationship edges, retention state and verification state. <b>A visualizer owns none of those concepts</b> — it receives a rendering of them.</p>
+  </div>
+
+  <div class="lib-group">The projection privacy firewall</div>
+  <p class="lede" style="margin-bottom:26px">Not every memory belongs in a graph UI. Everything crosses a policy boundary before a viewer sees it, and the projected text may be rewritten into a safe summary — the same sanitisation Career Mode already does.</p>
+
+  <div class="chips" style="margin-bottom:26px">
+    <span class="chip hi">passwords</span><span class="chip hi">API keys</span><span class="chip hi">auth tokens</span><span class="chip hi">private keys</span><span class="chip hi">cookies</span><span class="chip hi">.env secrets</span><span class="chip hi">password vaults</span><span class="chip hi">employer code</span><span class="chip hi">client data</span><span class="chip hi">raw email</span><span class="chip hi">system prompts</span><span class="chip hi">provider credentials</span>
+  </div>
+  <p class="lede" style="margin-bottom:44px">Four profiles ship: <b>overview</b> (default), <b>developer</b>, <b>career</b>, <b>private_full</b>. Even <code>private_full</code> never includes credential material.</p>
+
+  <div class="lib-group">Phase 3B acceptance gate</div>
+  <div class="ladder" style="margin-bottom:10px">
+    <div class="irow"><div class="in">No-dependency</div><div><div class="why">Uninstall the viewer. Memory, retrieval, voice, skills, Developer and Career Mode all still work.</div></div></div>
+    <div class="irow"><div class="in">Delete-the-view</div><div><div class="why">Delete the whole projection directory. <b>Zero canonical memories lost</b>, and the graph regenerates.</div></div></div>
+    <div class="irow"><div class="in">Canonical checksum</div><div><div class="why">Hash canonical memory, then generate → open → browse → close. The hash must not move.</div></div></div>
+    <div class="irow"><div class="in">Edit-the-mirror</div><div><div class="why">Hand-edit a generated page. Harry's memory is unchanged; the next rebuild overwrites the edit.</div></div></div>
+    <div class="irow"><div class="in">Secret exclusion</div><div><div class="why">Seed fake keys, passwords, .env content and an employer-confidential item. None may appear in <b>any</b> profile.</div></div></div>
+    <div class="irow"><div class="in">Offline</div><div><div class="why">Pull the network. The projected graph is still browsable.</div></div></div>
+    <div class="irow"><div class="in">Reproducibility</div><div><div class="why">Same snapshot + same policy → identical nodes, edges, IDs and privacy decisions.</div></div></div>
+    <div class="irow"><div class="in">Failure domain</div><div><div class="why">Corrupt the projection. Harry says <i>"the visualization needs rebuilding"</i> — <b>never</b> <i>"my memory is corrupted."</i></div></div></div>
+  </div>
+  <div class="ph-note">On the 16 GB machine the viewer is <b>on-demand, not a daemon</b> — generated, launched, browsed, closed. And only meaningful entities get projected: people, projects, skills, technologies, decisions, goals, achievements. <b>Not</b> every conversation turn and every command execution.</div>
+
+  <div class="lib-group">Threat model</div>
+  <div class="agents">
+    <div class="agent ag-harry"><div class="role">threat 01</div><h3>Visualizer becomes a hidden writer</h3><ul><li>Never ingest changes from generated files</li><li>No two-way sync, no canonical path</li><li>Directory marked derived + disposable</li></ul></div>
+    <div class="agent ag-claude"><div class="role">threat 02</div><h3>Private data over-projected</h3><ul><li>Privacy firewall with allowlists</li><li>Seeded fake-secret tests</li><li>Projection audit before launch</li></ul></div>
+    <div class="agent ag-local"><div class="role">threat 03</div><h3>Viewer ships data outward</h3><ul><li>Sync, RTC, publishing, MCP all off</li><li>Zero plugins to start</li><li>Strict-offline firewall mode</li></ul></div>
+    <div class="agent ag-openai"><div class="role">threat 04</div><h3>Format or API changes</h3><ul><li>Adapter interface, one isolated module</li><li>No viewer imports in the Knowledge Engine</li><li>Tests require Harry to run without it</li></ul></div>
+  </div>
+
+  <div class="callout">
+    <div class="k">Research · what changed after v1.5 was written</div>
+    <p>v1.5's caution about the storage transition was correct — and the situation has since resolved into something more actionable. <b>Logseq has split into two products.</b> The DB version shipped its 2.0 beta in July 2026 with SQLite as the canonical store; the file-based Markdown app continues as <b>Logseq OG</b> in its own repository, and the project states OG stays maintained and that no one is forced to migrate. Both remain AGPL-3.0. The DB README still warns plainly that <b>data loss is possible</b> and recommends automated backups.</p>
+    <p>Two findings sharpen the isolation policy rather than soften it. First, the DB version now ships an <b>optional MCP server</b> that can run against the current graph from either the desktop app or the CLI, with create, edit and search capability — so §46.1's "no MCP for Harry's graph" is no longer a precaution about a hypothetical, it is a real shipping surface that must be verified <i>off</i>. Second, the <b>DB plugin API is itself still in beta</b>, which is a second reason the "zero plugins" starting position is right.</p>
+    <div class="srcs">
+      <a href="https://github.com/logseq/logseq" target="_blank" rel="noopener">logseq/logseq</a>
+      <a href="https://github.com/logseq/og" target="_blank" rel="noopener">logseq/og — file version</a>
+      <a href="https://github.com/logseq/docs/blob/master/db-version.md" target="_blank" rel="noopener">db-version.md</a>
+      <a href="https://plugins-doc.logseq.com/" target="_blank" rel="noopener">plugin API</a>
+      <a href="https://github.com/siyuan-note/siyuan" target="_blank" rel="noopener">SiYuan</a>
+      <a href="https://joplinapp.org/plugins/" target="_blank" rel="noopener">Joplin plugins</a>
+    </div>
+  </div>
+
+  <div class="me-note">
+    <h3>Field notes <span>— seven tweaks before you hand 3B to Codex</span></h3>
+    <p><b>1 · The firewall is written as a blocklist. Make it an allowlist.</b> §45.1 enumerates what to exclude, but §55 asks Claude to verify filtering is <i>deny-safe</i>. Those are different systems. A blocklist fails open on every memory type invented after it was written. Project only when <code>privacy_class</code> is explicitly in the profile's include list — then add the test that proves it: introduce an unclassified memory type and assert it does <b>not</b> appear.</p>
+    <p><b>2 · Classification won't catch a key pasted into a note body.</b> Category filtering protects categories; it does nothing about an API key sitting in the middle of an otherwise-projectable decision note. Add entropy/regex scanning as an independent second layer at projection time, fail closed, and log the redaction. Extend the seeded-secret test to secrets <i>inside</i> allowed memories.</p>
+    <p><b>3 · Target Logseq OG for adapter #1.</b> File graphs are exactly the shape this design wants — generated, diffable, human-inspectable, trivially deletable, and reproducible enough to make the checksum and reproducibility gates almost free. The DB version inverts that: SQLite becomes canonical, files stop being hand-editable, and it is beta with an explicit data-loss warning. Wrong shape for a disposable mirror. Treat DB graphs as a <i>later, separate</i> adapter, and never import one.</p>
+    <p><b>4 · Consider promoting StaticGraphVisualizer to adapter #0.</b> Your requirement is read-only, disposable, on-demand graph exploration that works offline and on the projector. A generated self-contained HTML graph delivers all of it with <b>no third-party runtime in a privacy-critical path</b> — no Electron, no plugin surface, no MCP server, no sync toggles anyone has to remember to disable, no beta migration, and effectively zero idle RAM on a 16 GB machine. It also renders on the projector <i>and</i> the phone PWA you already shipped. Logseq then becomes the power-user view it deserves to be, rather than the default dependency.</p>
+    <p><b>5 · Build to a temp directory and swap atomically.</b> Generate into <code>logseq.tmp</code>, then rename over the live path, so a half-written projection can never be opened and browsed as if it were complete. Mark generated files read-only while you're there — it won't stop a determined edit, but it turns the edit-the-mirror mistake into a deliberate act rather than an accident.</p>
+    <p><b>6 · Make the manifest a receipt.</b> <code>PROJECTION_MANIFEST.json</code> should carry the canonical snapshot hash, the profile ID and policy version, per-type included/excluded counts, the redaction count and the generator version. That turns the reproducibility gate from a judgement call into an assertion, and gives <code>brain.projection.audit</code> something real to check.</p>
+    <p><b>7 · Assert egress; don't just toggle a firewall rule.</b> Strict-offline mode should end with a test that <b>zero outbound connections occurred</b> during a viewer session, not merely that a rule was added. Worth knowing: a Windows Firewall rule keyed to an executable path stops applying when an Electron app updates into a new path — so revalidate the rule, or the mode fails silently open. Also wire <code>brain.visualizer.*</code> into the emergency stop, so <i>"Harry, stop everything"</i> closes an open projection.</p>
+  </div>
+
+  <div class="callout">
+    <div class="k">Where this ends up</div>
+    <p>Logseq is an <b>acceleration tool, not the end state.</b> A future Harry-native brain UI reads the same Brain Projection API and can add what no note app will give you — memory provenance, privacy class, confidence, filters by mode, and <i>"why do you remember this?"</i> with a delete button next to it. When that lands it simply becomes the default view. <b>No migration is required, because the visualizer never owned the data.</b> That is the whole point of building it this way now.</p>
+  </div>
+</section>
+
 <!-- ============ DAY ONE ============ -->
 <section id="dayone">
   <div class="pbar deep" data-speed="0.35" style="width:150px;height:50vh;top:-10%;left:-70px"></div>
-  <div class="eyebrow"><span class="n">12</span> EXECUTION</div>
+  <div class="eyebrow"><span class="n">13</span> EXECUTION</div>
   <h2>Today's win <span class="dim">— the Day 1 loop.</span></h2>
   <div class="dayone">
     <h3>Fresh laptop → Harry speaks. That's the whole win.</h3>
@@ -1150,7 +1238,7 @@ const PHASES=[
    {t:'Ollama',u:'https://ollama.com/download/windows',c:'winget install Ollama.Ollama\nollama --version',w:'Must report ≥ 0.17.4 — qwen3.5’s architecture (Gated DeltaNet) needs it. Older installs silently fail to load the model.'},
    {t:'Codex CLI',u:'https://developers.openai.com/codex/cli',c:'powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"',w:'Official standalone installer — no Node required. Then run codex and sign in with your ChatGPT account. (npm alternative: npm i -g @openai/codex — the unscoped “codex” package is an unrelated trap.)'},
    {t:'Claude Code',u:'https://code.claude.com/docs/en/setup',c:'irm https://claude.ai/install.ps1 | iex',w:'Native Windows installer, no admin, no Node. Then run claude and log in with your Claude subscription.'},
-   {t:'Phase 0A bootstrap',c:'git init harry ; cd harry\n# place HARRY_ARCHITECTURE_ROADMAP_v1.4.md at the root\ncodex   # paste the First Codex prompt from section 05',w:'Governance before functionality. Codex creates the entire tree and stops; Claude Code reviews; you accept. Only then does Phase 1 exist.'},
+   {t:'Phase 0A bootstrap',c:'git init harry ; cd harry\n# place HARRY_ARCHITECTURE_ROADMAP_v1.5.md at the root\ncodex   # paste the First Codex prompt from section 05',w:'Governance before functionality. Codex creates the entire tree and stops; Claude Code reviews; you accept. Only then does Phase 1 exist.'},
    {t:'Hardware audit',c:'Get-CimInstance Win32_Processor | Select Name,NumberOfCores,NumberOfLogicalProcessors\nGet-CimInstance Win32_PhysicalMemory | Select Manufacturer,Capacity,Speed\nGet-CimInstance Win32_VideoController | Select Name,AdapterRAM,DriverVersion\nGet-PhysicalDisk | Select FriendlyName,MediaType,Size\nnvidia-smi',w:'Paste results into docs/hardware.md and commit. This file decides Harry’s model sizes.'}
   ],
   note:'<b>RAM is not VRAM.</b> A GTX 1650-class GPU (~4 GB) stays a 4 GB GPU after the 32 GB upgrade — CPU inference remains the workhorse. And v1.4’s hard rule: <b>no Harry functionality before Phase 0A passes.</b> The repo is born governed.'},
@@ -1186,9 +1274,9 @@ const PHASES=[
   note:'Every MCP server connects <b>through Harry’s policy engine, never directly to a model</b> — and expose Harry’s own audited skills as an MCP server so Claude Code and Codex work under Harry’s rules. Authority upgrade from §8A: an approval can become a remembered <b>scoped</b> grant (“always allow VS Code in Personal Projects”), but always-confirm classes never auto-approve and no always-on elevated shell ever exists.'},
 
  {n:3,ver:'v0.3 · MEMORY',title:'Knowledge & Retrieval',obj:'Durable, typed, explicit memory — session, project, preference, episodic, knowledge index — without dumping your laptop into model prompts.',
-  ship:['SQLite: memories, projects, tasks, documents, approvals','Local embeddings via Ollama (0.6B — tiny, fast)','Retrieval that cites source provenance on every answer','Privacy excludes: .ssh, credential stores, vaults, AppData'],
-  skills:['memory.remember','memory.forget','memory.search','document.index','project.context'],
-  gate:'memory.forget provably deletes · every retrieval names its source · restricted folders never appear in the index.',
+  ship:['SQLite: memories, projects, tasks, documents, approvals','Local embeddings via Ollama (0.6B — tiny, fast)','Retrieval that cites source provenance on every answer','Privacy excludes: .ssh, credential stores, vaults, AppData','<b>3B</b> — one-way projection of the brain into a disposable graph viewer'],
+  skills:['memory.remember','memory.forget','memory.search','document.index','project.context','brain.project','brain.visualizer.open','brain.projection.verify_isolation'],
+  gate:'memory.forget provably deletes · every retrieval names its source · restricted folders never appear in the index. <b>3B:</b> Harry passes every memory test with the visualizer uninstalled, and deleting the projection loses zero canonical memories.',
   fun:'“What folder did we use for the prototype?” — Harry remembers. Locally. Forever.',
   inst:[
    {t:'sqlite-vec',u:'https://github.com/asg017/sqlite-vec',c:'pip install sqlite-vec',w:'Vector search inside SQLite itself — the concrete answer to “lightweight vector DB initially”. No cluster, no server, one file.'},
