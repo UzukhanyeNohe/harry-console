@@ -1254,7 +1254,7 @@ const PHASES=[
   gate:'Full loop works with Wi-Fi OFF, zero cloud traffic · onboarding runs end-to-end and you can inspect, edit and delete everything it saved · chosen voice survives a restart · wake word hits 95%+ once enabled.',
   fun:'The first time Harry answers you out loud, offline, this stops being a document.',
   inst:[
-   {t:'Project + venv',c:'mkdir harry ; cd harry\npy -3.12 -m venv .venv\n.\\.venv\\Scripts\\Activate.ps1',w:'Isolated environment, pinned dependency file. Never global-install the AI stack.'},
+   {t:'venv — at the repo root',c:'# already inside the harry repo from Phase 0A\npy -3.12 -m venv .venv\n.\\.venv\\Scripts\\Activate.ps1',w:'Run this <b>inside the repo Phase 0A created</b> — do not mkdir a second harry, or the venv lands one level below pyproject.toml and pytest stops resolving. Isolated environment, pinned dependency file. Never global-install the AI stack.'},
    {t:'faster-whisper (STT)',u:'https://github.com/SYSTRAN/faster-whisper',c:'pip install faster-whisper sounddevice soundfile',w:'Start with the “small” model in int8 — right size for this CPU. Models auto-download on first run.'},
    {t:'Silero VAD',u:'https://github.com/snakers4/silero-vad',c:'pip install silero-vad',w:'Detects speech start/end so you never transcribe silence; enables barge-in later.'},
    {t:'espeak-ng (Kokoro dep)',u:'https://github.com/espeak-ng/espeak-ng/releases',c:'# download and run espeak-ng.msi from Releases',w:'Required on Windows for Kokoro’s phonemization. Install before Kokoro.'},
